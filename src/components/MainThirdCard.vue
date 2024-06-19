@@ -77,5 +77,8 @@ export default{
     }
     .myBike{
         margin-top: 1rem;
+        background-color: #f5f5f5;
+        width: fit-content;
+        padding: .3rem ;
     }
 </style>
