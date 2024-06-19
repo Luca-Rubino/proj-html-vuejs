@@ -87,7 +87,7 @@ section{
     top: 50%;
     left: 15%;
     color: white;
-    width: 50%;
+    width: 40%;
         h1{
             font-size: 3.5rem;
             margin-bottom: 1rem;
