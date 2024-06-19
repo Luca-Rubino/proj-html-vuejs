@@ -24,7 +24,7 @@ export default{
         <article>
 
             <ul>
-                <li></li>
+                <li>1</li>
             </ul>
 
         </article>
@@ -32,7 +32,7 @@ export default{
         <article>
 
             <ul>
-                <li></li>
+                <li>2</li>
             </ul>
 
         </article>
@@ -40,7 +40,7 @@ export default{
         <article>
 
             <ul>
-                <li></li>
+                <li>3</li>
             </ul>
 
         </article>
@@ -48,7 +48,7 @@ export default{
         <article>
 
             <ul>
-                <li></li>
+                <li>4</li>
             </ul>
 
         </article>
