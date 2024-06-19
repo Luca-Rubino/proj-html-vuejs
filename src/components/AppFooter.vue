@@ -96,9 +96,11 @@ export default{
 footer {
     background-color: black;
     color: white;
+    padding: 2rem 10%;
 
     section:first-of-type {
         display: flex;
+        justify-content: space-between;
     }
 
     section {
@@ -106,7 +108,7 @@ footer {
         article {
             li {
                 list-style: none;
-
+                margin-bottom: .7rem;
             }
         }
 
@@ -115,8 +117,10 @@ footer {
                 li:first-of-type {
                     background-image: url("/src/assets/img/logo-footer-gobike.png");
                     background-repeat: no-repeat;
-                    background-size: 7rem;
-                    height: 2rem;
+                    background-size: 13rem;
+                    width: 13rem;
+                    height: 5rem;
+                    margin-bottom: 1rem;
                 }
             }
         }
@@ -141,7 +145,7 @@ footer {
                 }
             }
         }
-        
+
         article:nth-of-type(4) {
             ul {
                 li:nth-of-type(1)::before {
@@ -162,6 +166,11 @@ footer {
                 }
             }
         }
+    }
+
+    section:nth-of-type(2) {
+        text-align: center;
+
     }
 }
 
