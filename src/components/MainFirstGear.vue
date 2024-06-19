@@ -55,7 +55,7 @@ export default{
     section{
         width: 80%;
         margin: 0 auto;
-        height: 100vh;
+        height: 80vh;
         display: flex;
         justify-content: center;
     }
@@ -83,7 +83,8 @@ export default{
             
     }
     .bikerImg{
-        width: 60%;
+        width: 40%;
+        
     }
 
     .myPosition{
