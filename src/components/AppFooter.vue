@@ -106,6 +106,7 @@ footer {
         article {
             li {
                 list-style: none;
+
             }
         }
 
@@ -120,6 +121,47 @@ footer {
             }
         }
 
+        article:nth-of-type(3) {
+            ul {
+                li:nth-of-type(1)::before {
+                    content: "";
+                    width: auto;
+                    height: auto;
+                    display: block;
+                    background: transparent;
+                    margin-right: auto;
+                }
+                li::before {
+                    content: "";
+                    width: 11px;
+                    height: 4px;
+                    display: inline-block;
+                    background: #ffffff;
+                    margin-right: 9px;
+                }
+            }
+        }
+        
+        article:nth-of-type(4) {
+            ul {
+                li:nth-of-type(1)::before {
+                    content: "";
+                    width: auto;
+                    height: auto;
+                    display: block;
+                    background: transparent;
+                    margin-right: auto;
+                }
+                li::before {
+                    content: "";
+                    width: 11px;
+                    height: 4px;
+                    display: inline-block;
+                    background: #ffffff;
+                    margin-right: 9px;
+                }
+            }
+        }
     }
 }
 
