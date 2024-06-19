@@ -1,9 +1,16 @@
 <script>
-
 import {store} from '../store.js';
+import MainCardsSlider from './MainCardsSlider.vue';
+
 
 export default{
-    data() {
+
+    components:{
+        MainCardsSlider,
+    },
+
+    data(){
+
         return{
             store,
         }
@@ -15,6 +22,7 @@ export default{
 <template>
     <main>
         <h1>main</h1>
+        <MainCardsSlider />
     </main>
 </template>
 
