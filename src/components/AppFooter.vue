@@ -6,6 +6,8 @@ export default{
     data() {
         return{
             store,
+
+
         }
     }
 }
@@ -13,9 +15,74 @@ export default{
 </script>
 
 <template>
-<h1>footer</h1>
+
+<footer>
+    <h1>footer</h1>
+
+    <section>
+
+        <article>
+
+            <ul>
+                <li></li>
+            </ul>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li></li>
+            </ul>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li></li>
+            </ul>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li></li>
+            </ul>
+
+        </article>
+
+    </section>
+
+    <section>
+
+        <p>@ 2024 Gobike - All Rights Reserved</p>
+
+    </section>
+
+</footer>
+
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+footer {
+    background-color: black;
+    color: white;
+
+    section {
+        article:first-of-type {
+            ul {
+                li:first-of-type {
+                    background-image: url("/src/assets/img/logo-footer-gobike.png");
+                    background-repeat: no-repeat;
+                    background-size: 3.5rem;
+                }
+            }
+        }
+    }
+}
+
 
 </style>
