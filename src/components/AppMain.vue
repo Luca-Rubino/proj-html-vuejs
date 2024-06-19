@@ -1,5 +1,6 @@
 <script>
 import {store} from '../store.js';
+import MainSixthArticle from './MainSixthArticle.vue'; 
 import MainFirstGear from './MainFirstGear.vue'
 import MainThirdCard from './MainThirdCard.vue'
 
@@ -7,6 +8,7 @@ export default{
     components:{
         MainFirstGear,
         MainThirdCard,
+        MainSixthArticle,
     },
     data() {
         return{
@@ -21,6 +23,7 @@ export default{
     <main>
         <MainFirstGear/>
         <MainThirdCard/>
+        <MainSixthArticle/>
     </main>
 </template>
 
