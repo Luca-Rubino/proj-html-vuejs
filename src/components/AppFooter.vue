@@ -30,10 +30,23 @@ export default{
 
             <ul>
                 <li></li>
-                <li>{{ listaElementiFooter[0].indirizzo }}</li>
-                <li>{{ listaElementiFooter[0].telefono }}</li>
-                <li>{{ listaElementiFooter[0].email }}</li>
-                <li>icone</li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    {{ listaElementiFooter[0].indirizzo }}
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone-volume"></i>
+                    {{ listaElementiFooter[0].telefono }}
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    {{ listaElementiFooter[0].email }}
+                </li>
+                <li>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </li>
             </ul>
 
         </article>
@@ -106,9 +119,19 @@ footer {
     section {
 
         article {
+
             li {
+                display: flex;
+                align-items: center;
                 list-style: none;
-                margin-bottom: .7rem;
+                margin-bottom: 1.2rem;
+                font-size: 1.2rem;
+                font-weight: 100;
+
+                i{
+                    font-size: 1.7rem;
+                    margin-right: 1rem;
+                }
             }
         }
 
@@ -135,6 +158,7 @@ footer {
                     background: transparent;
                     margin-right: auto;
                 }
+
                 li::before {
                     content: "";
                     width: 11px;
@@ -156,6 +180,7 @@ footer {
                     background: transparent;
                     margin-right: auto;
                 }
+
                 li::before {
                     content: "";
                     width: 11px;
