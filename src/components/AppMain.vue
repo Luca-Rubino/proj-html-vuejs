@@ -13,9 +13,11 @@ export default{
 </script>
 
 <template>
-    <h1>main</h1>
+    <main>
+        <h1>main</h1>
+    </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
