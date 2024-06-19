@@ -89,6 +89,7 @@ export default{
     .myPosition{
         position: relative;
         width: 100%;
+        animation: appear 2s linear;
         div{
         width: 100%;
         position: absolute;
@@ -96,7 +97,6 @@ export default{
             left: 0;
             top: 2rem;
                 img{
-
                     animation: spin 15s linear infinite;
                 }
         }
@@ -125,6 +125,14 @@ export default{
         }
         100%{
             rotate: 360deg;
+        }
+    }
+    @keyframes appear{
+        0%{
+            right: 100%;
+        }
+        100%{
+            right: 0;
         }
     }
 </style>
