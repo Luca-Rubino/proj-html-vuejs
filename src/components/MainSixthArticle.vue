@@ -48,9 +48,9 @@ export default {
         <div class="articles-container">
             <article v-for="(article, index) in articles" :key="index" class="article-card">
                 <img :src="article.image" :alt="article.title">
-                <p>{{ article.date }}</p>
-                <h3>{{ article.title }}</h3>
-                <p class="text-left margin">{{ article.description }}</p>
+                <p class="data">{{ article.date }}</p>
+                <h3 id="font">{{ article.title }}</h3>
+                <p class="text-left" id="margin-b">{{ article.description }}</p>
                 <button>More</button>
             </article>
         </div>
@@ -61,6 +61,7 @@ export default {
 <style lang="scss" scoped>
 .big-container{
     margin-bottom: 5rem;
+    background-color: #fbfbfb;
 }
 
 .text-left{
@@ -68,8 +69,16 @@ export default {
 }
 
 .bg {
-    background-color: #fbfbfb;
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+#font{
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+#margin-b{
     margin-bottom: 2rem;
 }
 
@@ -113,10 +122,11 @@ h1 {
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
     cursor: pointer;
-    padding: 1rem;
+    padding: 1.2rem;
     width: 6rem;
+    font-size: .9rem;
+    font-weight: bold;
 }
 
 .article-card button:hover {
