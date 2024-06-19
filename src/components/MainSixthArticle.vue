@@ -9,11 +9,28 @@ export default{
 </script>
 
 <template>
-    <h1>SIXTH</h1>
-    <h2>prova</h2>
-    <h3>test</h3>
+    <div>
+        <div>
+
+        </div>
+        <article>
+            <img src="" alt="">
+            <p>
+                provaaaaaaaaaa
+            </p>
+            <h2>
+
+            </h2>
+            <p>
+
+            </p>
+            <button>
+
+            </button>
+        </article>
+    </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
