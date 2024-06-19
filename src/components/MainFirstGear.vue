@@ -58,6 +58,7 @@ export default{
         height: 80vh;
         display: flex;
         justify-content: center;
+        margin-bottom: 3rem;
     }
     button{
             font-size: 1.3rem;
