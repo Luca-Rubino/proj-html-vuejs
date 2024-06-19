@@ -6,6 +6,7 @@ export default{
         return{
             store,
             counter: 0,
+            isActive: false,
             jumboTron:[
         {
         text: 'Learn Mountain Bike From The Expert',
@@ -21,11 +22,16 @@ export default{
     },
     methods:{
         rightClick(){
+            
             if( this.counter == 2){
                 this.counter = 0
             }else{
                 this.counter++;
-            }  
+            }
+            this.isActive = true;
+            setTimeout(() =>{
+                this.isActive = false;
+            }, 750)
             },
             leftClick(){
                 if( this.counter == 0){
@@ -33,6 +39,10 @@ export default{
                 }else{
                     this.counter--;
                 }  
+                this.isActive = true;
+            setTimeout(() =>{
+                this.isActive = false;
+            }, 750)
                 },
         },
 
@@ -41,10 +51,10 @@ export default{
 </script>
 
 <template>
-    <section>
+    <section :class="(isActive) ? 'myAnimated' : ''">
         <i class="fa-solid fa-chevron-left leftClick myButton" @click="leftClick"></i>
 
-        <div :class="'bg' + counter"></div>
+        <div :class="'bg' + counter" ></div>
         <div class="myText">
             <h1> {{ jumboTron[counter].text }}</h1>
             <p>Learn cycling from the pros.</p>
@@ -67,6 +77,7 @@ section{
     top: 50%;
     left: 5%;
 }
+
 .rightClick{
     position: absolute;
     top: 50%;
@@ -87,7 +98,7 @@ section{
     top: 50%;
     left: 15%;
     color: white;
-    width: 50%;
+    width: 40%;
         h1{
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -120,4 +131,14 @@ section{
         height: 100vh;
         background-position: center;
     }
+    .myAnimated{
+        animation: immageMovie .75s linear;
+    }
+
+    @keyframes immageMovie{
+    /* opacity per ottimizzazione e gradevolezza */
+    0%{opacity: 0.1;}
+    50%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
 </style>
