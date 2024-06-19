@@ -1,8 +1,15 @@
 <script>
-
 import {store} from '../store.js';
+import MainSixthArticle from './MainSixthArticle.vue'; 
+import MainFirstGear from './MainFirstGear.vue'
+import MainThirdCard from './MainThirdCard.vue'
 
 export default{
+    components:{
+        MainFirstGear,
+        MainThirdCard,
+        MainSixthArticle,
+    },
     data() {
         return{
             store,
@@ -14,7 +21,9 @@ export default{
 
 <template>
     <main>
-        <h1>main</h1>
+        <MainFirstGear/>
+        <MainThirdCard/>
+        <MainSixthArticle/>
     </main>
 </template>
 
