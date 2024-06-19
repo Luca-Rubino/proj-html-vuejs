@@ -71,6 +71,7 @@ section{
     height: 100vh;
     width: 100vw;
     position: relative;
+    margin-bottom: 5rem;
 }
 .leftClick{
     position: absolute;

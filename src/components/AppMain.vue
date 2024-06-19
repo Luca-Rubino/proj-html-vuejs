@@ -1,8 +1,11 @@
 <script>
-
 import {store} from '../store.js';
+import MainFirstGear from './MainFirstGear.vue'
 
 export default{
+    components:{
+        MainFirstGear,
+    },
     data() {
         return{
             store,
@@ -14,7 +17,7 @@ export default{
 
 <template>
     <main>
-        <h1>main</h1>
+        <MainFirstGear/>
     </main>
 </template>
 
