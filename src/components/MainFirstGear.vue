@@ -68,7 +68,7 @@ export default{
         }
     .bikertext{
         width: 40%;
-        padding: 3rem 1.5rem;
+        padding: 3rem 2rem;
         
             h2{
                 font-size: 2rem;
