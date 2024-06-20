@@ -7,10 +7,10 @@ export default{
         return{
             store,
             listaElementiFooter: [
-                { indirizzo: 'New Jersey, USA', telefono: '+1 (234) 567 89 10', email: 'example@exemple.com', },
-                { titolo: 'Join Our Newsletter', sottotitolo: 'Subscribe to receive ureful infotmation.'},
-                { titolo: 'Join Our Newsletter', punto1: 'Riding Lesson',  punto2: 'Safe Driving', punto3: 'Mountain Bike', punto4: 'Trail Drive', punto5: 'Pedaling' },
-                { titolo: 'Quick Links', punto1: 'Home',  punto2: 'About Us', punto3: 'Blog', punto4: 'Packages', punto5: 'Contact' }
+                { id: 0, indirizzo: 'New Jersey, USA', telefono: '+1 (234) 567 89 10', email: 'example@exemple.com' },
+                { id: 1, titolo: 'Join Our Newsletter', li_1: 'Subscribe to receive ureful infotmation.' },
+                { id: 2, titolo: 'Training', li_1: 'Riding Lesson',  li_2: 'Safe Driving', li_3: 'Mountain Bike', li_4: 'Trail Drive', li_5: 'Pedaling' },
+                { id: 3, titolo: 'Quick Links', li_1: 'Home',  li_2: 'About Us', li_3: 'Blog', li_4: 'Packages', li_5: 'Contact' }
             ],
             index: 0,
 
@@ -26,36 +26,45 @@ export default{
 
     <section>
 
-        <article>
+        <article v-for="(listaElementiFooter, index) in listaElementiFooter" :key="index" v-show="listaElementiFooter">
 
             <ul>
-                <li></li>
                 <li>
-                    <i class="fa-solid fa-location-dot"></i>
-                    {{ listaElementiFooter[0].indirizzo }}
+                    {{ listaElementiFooter.titolo }}
                 </li>
                 <li>
-                    <i class="fa-solid fa-phone-volume"></i>
-                    {{ listaElementiFooter[0].telefono }}
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    {{ listaElementiFooter.indirizzo }}
+                    {{ listaElementiFooter.li_1 }}
                 </li>
                 <li>
-                    <i class="fa-solid fa-envelope"></i>
-                    {{ listaElementiFooter[0].email }}
+                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
+                    {{ listaElementiFooter.telefono }}
+                    {{ listaElementiFooter.li_2 }}
                 </li>
                 <li>
-                    <i class="fa-brands fa-facebook-f"></i>
+                    <!-- <i class="fa-solid fa-envelope"></i> -->
+                    {{ listaElementiFooter.email }}
+                    {{ listaElementiFooter.li_3 }}
+                </li>
+                <li>
+                    {{ listaElementiFooter.li_4 }}
+                    <!-- <i class="fa-brands fa-facebook-f"></i>
                     <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-twitter"></i> -->
+                </li>
+                <li>
+                    {{ listaElementiFooter.li_5 }}
                 </li>
             </ul>
 
         </article>
 
-        <article>
+        <!-- <article>
 
             <ul>
-                <li>{{ listaElementiFooter[1].titolo }}</li>
-                <li>{{ listaElementiFooter[1].sottotitolo }}</li>
+                <li></li>
+                <li></li>
                 <li>
                     <input type="email" placeholder="Your Email Address">
                 </li>
@@ -64,33 +73,7 @@ export default{
                 </li>
             </ul>
 
-        </article>
-
-        <article>
-
-            <ul>
-                <li>{{ listaElementiFooter[2].titolo }}</li>
-                <li>{{ listaElementiFooter[2].punto1 }}</li>
-                <li>{{ listaElementiFooter[2].punto2 }}</li>
-                <li>{{ listaElementiFooter[2].punto3 }}</li>
-                <li>{{ listaElementiFooter[2].punto4 }}</li>
-                <li>{{ listaElementiFooter[2].punto5 }}</li>
-            </ul>
-
-        </article>
-
-        <article>
-
-            <ul>
-                <li>{{ listaElementiFooter[3].titolo }}</li>
-                <li>{{ listaElementiFooter[3].punto1 }}</li>
-                <li>{{ listaElementiFooter[3].punto2 }}</li>
-                <li>{{ listaElementiFooter[3].punto3 }}</li>
-                <li>{{ listaElementiFooter[3].punto4 }}</li>
-                <li>{{ listaElementiFooter[3].punto5 }}</li>
-            </ul>
-
-        </article>
+        </article> -->
 
     </section>
 
@@ -144,6 +127,10 @@ footer {
                     width: 13rem;
                     height: 5rem;
                     margin-bottom: 1rem;
+                }
+                li:nth-of-type(2)::before{
+                    content: '';
+                    margin-right: 1rem;
                 }
             }
         }
