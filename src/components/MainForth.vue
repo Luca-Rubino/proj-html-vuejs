@@ -45,31 +45,25 @@ export default {
     background: #fff;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     text-align: center;
     width: 250px;
+    background-color: black;
 }
 
 .trainer-card img {
     width: 100%;
     height: auto;
-    border-radius: 8px 8px 0 0;
 }
 
 .trainer-card h3 {
-    margin: 1rem 0 0.5rem;
     font-size: 1.2rem;
-    background-color: black;
+    color: white;
 }
 
 .trainer-card p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
-    color: #555;
-}
-
-.social-icons {
-    margin-top: 1rem;
+    color: white;
 }
 
 .social-icons i {
