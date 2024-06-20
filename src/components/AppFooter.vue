@@ -15,6 +15,9 @@ export default{
             index: 0,
 
         }
+    },
+    methods: {
+        setCustomValidity() {}
     }
 }
 
@@ -42,8 +45,11 @@ export default{
                     {{ listaElementiFooter.telefono }}
                     {{ listaElementiFooter.li_2 }}
                     <form action="get" method="post">
-                        <input type="email" name="email" placeholder="Your Email Address">
+                        <input type="email" name="email" placeholder="Your Email Address" required="true" oninvalid="this.setCustomValidity('The field is required')" onchange="this.setCustomValidity('')">
+                        <span class="wpcf7-not-valid-tip" aria-hidden="true">The field is required.</span>
                         <input type="submit" value="Subscribe ->"></input>
+                        <span class="wpcf7-spinner"></span>
+                        <div class="wpcf7-response-output" aria-hidden="true">One or more fields have an error. Please check and try again.</div>
                     </form>
                 </li>
                 <li>
@@ -94,7 +100,9 @@ footer {
                 font-size: 1rem;
                 font-weight: 100;
 
-                input {
+                input,
+                span,
+                div {
                     display: none;
                 }
 
@@ -146,6 +154,16 @@ footer {
                 li:nth-of-type(3) {
                     margin-bottom: 1rem;
                 }
+
+                li:nth-of-type(3)::before{
+                    content: '\f2a0';
+                    margin-right: 1rem;
+                }
+
+                li:nth-of-type(4)::before{
+                    content: '\f0e0';
+                    margin-right: 1rem;
+                }
             }
         }
 
@@ -157,12 +175,30 @@ footer {
                 }
 
                 li:nth-of-type(3) {
-                    input {
+                    input,
+                    span,
+                    div {
                         display: block;
+                    }
+
+                    input {
                         width: 25rem;
                         padding: 1rem;
                         border-radius: 3px;
                         border: 0;
+                    }
+
+                    span {
+                        text-align: center;
+                        color: #c62d2d;
+                        font-size: 1em;
+                        font-weight: normal;
+                        display: block;
+                    }
+
+                    div {
+                        padding:.5rem .3rem .5rem .3rem;
+                        border: 2px solid #ffb900;
                     }
 
                     input:first-of-type {
@@ -242,5 +278,35 @@ footer {
     }
 }
 
+.wpcf7-spinner {
+    visibility: hidden;
+    display: inline-block;
+    background-color: #23282d;
+    opacity: 0.75;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    margin: 0 24px;
+    position: relative;
+}
 
+
+.wpcf7-spinner::before {
+    content: '';
+    position: absolute;
+    background-color: #fbfbfc;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 100%;
+    transform-origin: 8px 8px;
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
 </style>
