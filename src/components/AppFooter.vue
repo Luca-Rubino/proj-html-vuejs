@@ -41,8 +41,8 @@ export default{
                     <!-- <i class="fa-solid fa-phone-volume"></i> -->
                     {{ listaElementiFooter.telefono }}
                     {{ listaElementiFooter.li_2 }}
-                    <form action="" method="post">
-                        <input type="email" placeholder="Your Email Address">
+                    <form action="get" method="post">
+                        <input type="email" name="email" placeholder="Your Email Address">
                         <input type="submit" value="Subscribe ->"></input>
                     </form>
                 </li>
@@ -102,17 +102,11 @@ footer {
 
         article {
 
-            li:first-of-type {
-                    padding: 1.5rem 0;
-                    font-weight: 900;
-                }
-
             li {
                 display: flex;
                 align-items: center;
                 list-style: none;
-                margin-bottom: 1.2rem;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: 100;
 
                 input {
@@ -124,10 +118,28 @@ footer {
                     margin-right: 1rem;
                 }
             }
+
+            li:first-of-type {
+                padding: 1.3rem 0;
+                font-weight: 900;
+                font-size: 1.5rem;
+            }
+
+            li:nth-of-type(2),
+            li:nth-of-type(3),
+            li:nth-of-type(4),
+            li:nth-of-type(5) {
+                margin-bottom: .8rem;
+            }
         }
 
         article:first-of-type {
             ul {
+
+                li {
+                    font-size: 1.1rem;
+                }
+
                 li:first-of-type {
                     background-image: url("/src/assets/img/logo-footer-gobike.png");
                     background-repeat: no-repeat;
@@ -136,18 +148,44 @@ footer {
                     height: 5rem;
                     margin-bottom: 1rem;
                 }
+
+                li:nth-of-type(2) {
+                    margin-bottom: 1rem;
+                }
+
                 li:nth-of-type(2)::before{
                     content: '\f14c';
                     margin-right: 1rem;
+                }
+
+                li:nth-of-type(3) {
+                    margin-bottom: 1rem;
                 }
             }
         }
 
         article:nth-of-type(2) {
             ul {
+
+                li:nth-of-type(2) {
+                    margin-bottom: 3rem;
+                }
+
                 li:nth-of-type(3) {
                     input {
                         display: block;
+                        width: 25rem;
+                        padding: 1rem;
+                        border-radius: 3px;
+                        border: 0;
+                    }
+
+                    input:first-of-type {
+                        margin-bottom: .3rem;
+                    }
+
+                    input:nth-of-type(2) {
+                        background-color: white;
                     }
                 }
             }
@@ -210,6 +248,7 @@ footer {
     section:first-of-type {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 1rem;
     }
 
     section:nth-of-type(2) {
