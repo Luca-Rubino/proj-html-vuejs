@@ -99,6 +99,7 @@ header{
 
         .logo img {
             height: 80px;
+            margin-left: 2rem;
         }
 
         .navLinks ul {
@@ -151,8 +152,9 @@ header{
         a {
             color: black;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 1rem;
+            
         }
 
     div.buttons{
