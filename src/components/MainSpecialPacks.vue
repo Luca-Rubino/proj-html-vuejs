@@ -4,8 +4,8 @@ import {store} from '../store.js';
 export default {
     data() {
         return {
-             store,
-             cardsPacks:[
+            store,
+            cardsPacks:[
                 
         
                         {
@@ -109,7 +109,6 @@ export default {
                         },
                 
                         ]
-              
         };
     },
 };
@@ -117,38 +116,44 @@ export default {
 
 
 <template>
-   
-   <div class="container" >
-    <div class="logo-packs">
-        <img src="../assets/img/badge.png" alt="">
-    </div>
-    <div class="title-packs">
-        <h1>Special Packs</h1>
-        <p>Select pricing plan to get more</p>
-    </div>
-    
-    <div class="flip-card" v-for="pack in cardsPacks">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img :src="pack.image" alt="">
-            <h2 class="title">{{ pack.title }}</h2>
-            <p>{{ pack.text }}</p>
-            <ul>
-                <li v-for="item in list" :key="id">
-                    <p>{{ item.listype }} {{ item.text }}</p>
-                    
-                </li>
-            </ul>
+
+<div class="container" >
+    <section>
+
+        <div class="logo-packs">
+            <img src="../assets/img/badge.png" alt="">
         </div>
-        <div class="flip-card-back">
-            <p class="title">BACK</p>
-            <p>Leave Me</p>
+        <div class="title-packs">
+            <h1>Special Packs</h1>
+            <p>Select pricing plan to get more</p>
+        </div>
+    </section>
+
+    <section class="my-card">
+
+        <div class="flip-card" v-for="pack in cardsPacks">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img :src="pack.image" alt="">
+                <h2 class="title">{{ pack.title }}</h2>
+                <p>{{ pack.text }}</p>
+                <ul>
+                    <li v-for="item in list" :key="id">
+                        <p>{{ item.listype }} {{ item.text }}</p>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div class="flip-card-back">
+                <p class="title">BACK</p>
+                <p>Leave Me</p>
+            </div>
         </div>
     </div>
+    </section>
+
 </div>
 
-   </div>
-  
 
 </template>
 
@@ -156,7 +161,17 @@ export default {
 <style lang="scss" scoped>
 
 .container{
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    .my-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
     .logo-packs{
         margin: 0 auto;
         margin-bottom: 1rem;
@@ -164,12 +179,12 @@ export default {
         border-radius: .5rem;
         width: 100px;
 
-              img{
+            img{
                 width: 100px;
                 filter: invert(100%);
                 padding: .8rem;
                 
-              }
+            }
     }
 
     .title-packs{
@@ -179,30 +194,31 @@ export default {
 
 
     .flip-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;      
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
+        display: flex;
+        justify-content: space-evenly;      
+        background-color: transparent;
+        width: 190px;
+        height: 254px;
+        perspective: 1000px;
+        font-family: sans-serif;
+        margin-right: 2rem;
 }
 
 .title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {

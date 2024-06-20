@@ -29,12 +29,12 @@ export default{
 
 <template>
     <main>
-        <MainCardsSlider />
         <MainFirstGear/>
+        <MainCardsSlider />
         <MainThirdCard/>
-        <MainSixthArticle/>
-        <MainSpecialPacks/>
         <MainForth/>
+        <MainSpecialPacks/>
+        <MainSixthArticle/>
 
     </main>
 </template>
