@@ -6,13 +6,17 @@
         </div>
         <div class="trainers-container">
             <div class="trainer-card" v-for="(trainer, index) in trainers" :key="index">
-                <img :src="trainer.image" :alt="trainer.name">
-                <h3>{{ trainer.name }}</h3>
-                <p>{{ trainer.role }}</p>
-                <div class="social-icons">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i>
+                <div class="image-container">
+                    <img :src="trainer.image" :alt="trainer.name">
+                    <div class="info">
+                        <h3>{{ trainer.name }}</h3>
+                        <p>{{ trainer.role }}</p>
+                        <div class="social-icons">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,8 +57,8 @@ export default {
         };
     },
 };
-
 </script>
+
 
 <style scoped lang="scss">
 .trainers-section {
@@ -65,6 +69,9 @@ export default {
 
 .margin-bottom {
     margin-bottom: 3rem;
+    h2 {
+        font-size: 2rem;
+    }
 }
 
 .trainers-container {
@@ -77,16 +84,48 @@ export default {
 }
 
 .trainer-card {
-    background: #fff;
-    text-align: center;
-    background-color: black;
-    border: solid .8rem #f7f7f7;
+    position: relative;
     width: calc(100% / 4 - 2rem);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
 }
 
 .trainer-card img {
     width: 100%;
-    margin-bottom: 1.5rem;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    transform: translateY(30%); 
+    transition: transform 1s ease;
+    z-index: 1;
+    padding-bottom: 3.5rem;
+}
+
+.trainer-card:hover .info {
+    transform: translateY(0); 
+}
+
+.trainer-card:hover img {
+    transform: scale(1.1);
 }
 
 .trainer-card h3 {
@@ -98,18 +137,15 @@ export default {
 .trainer-card p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
-    color: white;
-    color: #b3b3b3;
-    font-size: .8rem;
     font-weight: bolder;
+    color: #b3b3b3;
 }
 
 .social-icons i {
-    font-size:.8rem;
+    font-size: 0.8rem;
     margin: 0 0.5rem;
-    color: white;
     cursor: pointer;
     color: white;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
 }
 </style>
