@@ -4,6 +4,8 @@ import MainSixthArticle from './MainSixthArticle.vue';
 import MainFirstGear from './MainFirstGear.vue'
 import MainThirdCard from './MainThirdCard.vue';
 import MainSpecialPacks from './MainSpecialPacks.vue';
+import MainForth from './MainForth.vue';
+
 
 export default{
     components:{
@@ -11,6 +13,7 @@ export default{
         MainThirdCard,
         MainSixthArticle,
         MainSpecialPacks,
+        MainForth,
     },
     data() {
         return{
@@ -27,6 +30,8 @@ export default{
         <MainThirdCard/>
         <MainSixthArticle/>
         <MainSpecialPacks/>
+        <MainForth/>
+
     </main>
 </template>
 
