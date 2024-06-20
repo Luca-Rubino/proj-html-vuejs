@@ -1,5 +1,97 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-
+    thirdCards: [
+        {
+            img: '../src/assets/img/event1.jpg',
+            title: 'Toronto Cycling Event 2023',
+            date: '2022-06-22 @ 01:30 - 2024-08-23 @ 07:00',
+            location: 'Toronto',
+            bike: 'Bicycle Race',
+            numberClip: '22',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event2.jpg',
+            title: 'Istanbul Cycling Event 2023',
+            date: '2024-06-30 @ 01:30 - 2024-10-19 @ 03:30',
+            location: 'Istanbul',
+            bike: 'Bike Sport',
+            numberClip: '30',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event3.jpg',
+            title: 'Paris Cycling Event 2023',
+            date: '2022-06-22 @ 07:30 - 2024-11-08 @ 16:30',
+            location: 'Paris',
+            bike: 'Cycling Tour',
+            numberClip: '22',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event4.jpg',
+            title: 'New Jersey Cycling Event 2023',
+            date: '2022-06-25 @ 08:30 - 2024-08-24 @ 05:30',
+            location: 'New Jersey',
+            bike: 'Bicycle Race',
+            numberClip: '25',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event5.jpg',
+            title: 'London Cycling Event 2023',
+            date: '2024-06-28 @ 08:30 - 2024-07-26 @ 12:00',
+            location: 'London',
+            bike: 'Bike Sport',
+            numberClip: '28',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event6.jpg',
+            title: 'Kiev Cycling Event 2023',
+            date: '2022-06-29 @ 10:00 - 2024-05-18 @ 04:30',
+            location: 'Kiev',
+            bike: 'Bicycle Race',
+            numberClip: '29',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event7.jpg',
+            title: 'Colorado Cycling Event 2023',
+            date: '2022-06-28 @ 08:30 - 2024-08-14 @ 05:30',
+            location: 'Colorado',
+            bike: 'Bicycle Race',
+            numberClip: '28',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event8.jpg',
+            title: 'Amsterdam Cycling Event 2023',
+            date: '2024-06-28 @ 10:30 - 2024-10-24 @ 10:30',
+            location: 'Amsterdam',
+            bike: 'Bicycle Race',
+            numberClip: '28',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event9.jpg',
+            title: 'Toronto Cycling Event 2023',
+            date: '2022-06-22 @ 09:30 - 2024-09-27 @ 17:30',
+            location: 'Toronto',
+            bike: 'Bicycle Race',
+            numberClip: '22',
+            monthClip: 'JUN',
+        },
+        {
+            img: '../src/assets/img/event10.jpg',
+            title: 'Paris Cycling Event 2023',
+            date: '2022-06-26 @ 05:30 - 2024-12-20 @ 14:00',
+            location: 'Paris',
+            bike: 'Bicycle Race',
+            numberClip: '26',
+            monthClip: 'JUN',
+        },
+        
+    ]
 });
