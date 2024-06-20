@@ -33,11 +33,12 @@ export default {
 </script>
 
 <template>
-    <section class="navBar">
-        <div class="logo">
-            <img :src="store.header.logo" alt="Logo">
-        </div>
-        <nav class="navLinks">
+    <header> 
+        <section class="navBar">
+            <div class="logo">
+                <img :src="store.header.logo" alt="Logo">
+            </div>
+            <nav class="navLinks">
             <ul>
                 <li v-for="link in store.header.links">
                     <a :href="link.url" @mouseover="link.text === 'trainings' && toggleDropdown()" @mouseleave="link.text === 'trainings' && toggleDropdown()"> {{ link.text }}</a>
@@ -50,44 +51,65 @@ export default {
             </ul>
 
         </nav>
-        <div class="hamburger-menu">
+        <div class="buttons">
+            <div class="hamburger-menu">
                 <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="button">
+                <button class="ucEvents">
+                    <img class="helmet" :src="store.header.buttonLogo" alt="helmet">
+                    <p>Upcoming Events -></p>
+                </button>
+            </div>
         </div>
-        <div class="button">
-            <button class="ucEvents">
-                <img class="helmet" :src="store.header.buttonLogo" alt="helmet">
-                <p>Upcoming Events -></p>
-            </button>
-        </div>
+        
     </section>
+</header>
 
 </template>
 
 <style lang="scss" scoped>
-    .navBar {
-    background: white;
-    color: black;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+header{
+    background-color: white;
+    height: 95px;
+    width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .navBar {
+    color: black;
+    padding: 1rem 0;
+    height: 95px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .logo img {
-        height: 85px;
+    i {
+        font-size: 2rem;
+        color: rgb(97, 97, 97);
+        cursor: pointer;
     }
 
-    .navLinks ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-        position: relative;
 
-        .nav-item{
+        .logo img {
+            height: 80px;
+        }
+
+        .navLinks ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
             position: relative;
+
+            .nav-item{
+                position: relative;
+            }
 
             .dropdown {
                 display: none;
@@ -99,9 +121,24 @@ export default {
                 padding: 1rem;
                 margin: 0;
                 min-width: 100px;
+            }
 
-                li {
-                    padding: 0.5rem 1rem;
+                    a:after {
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 10px;
+                        display: block;
+                        transition: all 0.3s ease;
+                        top: 30px;
+                        border-radius: 15px;
+                    }
+
+                    a:hover:after {
+                        width: 65px;
+                        height: 5px;
+                        background-color: black;
+                    }
 
                     a{
                         color: black;
@@ -109,41 +146,41 @@ export default {
                         display: block;
                     }
 
-                    a:hover {
-                        background-color: #b8b8b8;
-                    }
                 }
             }
-        }
-
-        &:hover .dropdown {
-            display: block;
-        }
-
         a {
             color: black;
             text-decoration: none;
             font-weight: 800;
             font-size: 1.2rem;
         }
-    }
-    
-    button.ucEvents{
+
+    div.buttons{
         display: flex;
-        justify-content: center;
         align-items: center;
-        background-color: black;
-        color: white;
-        height: 90px;
-        width: 350px;
-        font-weight: 1000;
-        font-size: 1.2rem;
+        gap: 2rem;
+
+
+        button.ucEvents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 75px;
+            width: 300px;
+            font-weight: 1000;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
     }
 
-    img.helmet{
-        height: 50px;
-        filter: invert(1);
-        margin-right: 1.5rem;
+        img.helmet{
+            height: 50px;
+            filter: invert(1);
+            margin-right: 1.5rem;
     }
-}
+    }
+    
+
 </style>
