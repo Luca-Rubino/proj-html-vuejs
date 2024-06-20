@@ -71,6 +71,7 @@ section{
     height: 100vh;
     width: 100vw;
     position: relative;
+    margin-bottom: 5rem;
 }
 .leftClick{
     position: absolute;
@@ -120,16 +121,24 @@ section{
         background-image: url('../assets/img/slider-bike-12.jpg');
         height: 100vh;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .bg1{
         background-image: url('../assets/img/slider-bike-9.jpg');
         height: 100vh;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
     .bg2{
         background-image: url('../assets/img/slider-bike-4.jpg');
         height: 100vh;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
     .myAnimated{
         animation: immageMovie .75s linear;
