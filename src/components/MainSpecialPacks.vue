@@ -13,22 +13,27 @@ export default {
                             title:'Basic',
                             text:'Learn to ride a bike from the professionals.',
                             list:[{
+                                id:0,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:1,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:2,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:3,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:4,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
@@ -41,22 +46,27 @@ export default {
                             title:'Standard',
                             text:'Learn to ride a bike from the professionals.',
                             list:[{
+                                id:0,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:1,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:2,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:3,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:4,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
@@ -70,22 +80,27 @@ export default {
                             title:'Premium',
                             text:'Learn to ride a bike from the professionals.',
                             list:[{
+                                id:0,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:1,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:2,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:3,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
+                                id:4,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
                             },
@@ -119,7 +134,7 @@ export default {
             <h2 class="title">{{ pack.title }}</h2>
             <p>{{ pack.text }}</p>
             <ul>
-                <li v-for="item in list">
+                <li v-for="item in list" :key="id">
                     <p>{{ item.listype }} {{ item.text }}</p>
                     
                 </li>
