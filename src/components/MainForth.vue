@@ -25,7 +25,7 @@
 
 <script>
 import Biker1 from '../assets/img/biker1.jpg';
-import Biker2 from '../assets/img/biker2.jpg';
+import Biker2 from '../assets/img/biker2.png';
 import Biker3 from '../assets/img/biker3.jpg';
 import Biker4 from '../assets/img/biker4.jpg';
 

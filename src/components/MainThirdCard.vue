@@ -11,7 +11,7 @@ export default{
     },
     methods:{
         eventList(){
-            axios.get('/api/events/bike').then(response => {
+            axios.get('http://152.89.170.170:3000/events/bike').then(response => {
                 this.store.thirdCardsApi = response.data;
                 console.log(response.data);
             })
@@ -111,13 +111,12 @@ created(){
                 margin-right: .7rem;
                     i{
                         margin-right: .5rem;
-
                     }
             }
     }
     section{
         width: 80%;
-        margin: 1rem auto;
+        margin: 1rem auto 3rem auto;
         display: flex;
         flex-wrap: wrap;
         
