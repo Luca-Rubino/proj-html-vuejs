@@ -41,6 +41,10 @@ export default{
                     <!-- <i class="fa-solid fa-phone-volume"></i> -->
                     {{ listaElementiFooter.telefono }}
                     {{ listaElementiFooter.li_2 }}
+                    <form action="" method="post">
+                        <input type="email" placeholder="Your Email Address">
+                        <input type="submit" value="Subscribe ->"></input>
+                    </form>
                 </li>
                 <li>
                     <!-- <i class="fa-solid fa-envelope"></i> -->
@@ -60,20 +64,20 @@ export default{
 
         </article>
 
-        <!-- <article>
+        <article>
 
             <ul>
                 <li></li>
                 <li></li>
                 <li>
-                    <input type="email" placeholder="Your Email Address">
+                    
                 </li>
                 <li>
-                    <button>Subscribe -></button>
+                    
                 </li>
             </ul>
 
-        </article> -->
+        </article>
 
     </section>
 
@@ -94,14 +98,14 @@ footer {
     color: white;
     padding: 2rem 10%;
 
-    section:first-of-type {
-        display: flex;
-        justify-content: space-between;
-    }
-
     section {
 
         article {
+
+            li:first-of-type {
+                    padding: 1.5rem 0;
+                    font-weight: 900;
+                }
 
             li {
                 display: flex;
@@ -110,6 +114,10 @@ footer {
                 margin-bottom: 1.2rem;
                 font-size: 1.2rem;
                 font-weight: 100;
+
+                input {
+                    display: none;
+                }
 
                 i{
                     font-size: 1.7rem;
@@ -129,15 +137,30 @@ footer {
                     margin-bottom: 1rem;
                 }
                 li:nth-of-type(2)::before{
-                    content: '';
+                    content: '\f14c';
                     margin-right: 1rem;
+                }
+            }
+        }
+
+        article:nth-of-type(2) {
+            ul {
+                li:nth-of-type(3) {
+                    input {
+                        display: block;
+                    }
                 }
             }
         }
 
         article:nth-of-type(3) {
             ul {
-                li:nth-of-type(1)::before {
+                li:first-of-type {
+                    font-weight: 900;
+                    width: 4rem;
+                }
+
+                li:first-of-type::before {
                     content: "";
                     width: auto;
                     height: auto;
@@ -159,6 +182,10 @@ footer {
 
         article:nth-of-type(4) {
             ul {
+                li:first-of-type {
+                    font-weight: 900;
+                }
+
                 li:nth-of-type(1)::before {
                     content: "";
                     width: auto;
@@ -178,6 +205,11 @@ footer {
                 }
             }
         }
+    }
+
+    section:first-of-type {
+        display: flex;
+        justify-content: space-between;
     }
 
     section:nth-of-type(2) {
