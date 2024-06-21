@@ -107,12 +107,15 @@ export default{
 <style lang="scss" scoped>
 
 @use '../styles/general.scss';
+section::-webkit-scrollbar{
+}
 section{
         width: 80vw;
         display: flex;
         flex-direction: row;
         max-width: 1300px;
         overflow: scroll;
+        scrollbar-width: none;
         position: relative;
         margin: 0 auto;
 }
