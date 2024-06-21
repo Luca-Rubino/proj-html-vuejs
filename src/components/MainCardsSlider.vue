@@ -10,41 +10,62 @@ export default{
         }
     },
 
-    methods:{
-        startSlider(){
-            for(let k=0; k <=1;k++ ){
-                for(let i = 0; i <= 4; i++){
+    methods: {
+    startSlider() {
+            for(let k = 0; k <= 1; k++) {
+                for(let i = 0; i <= 4; i++) {
                     this.sliderVisible.push(store.slidesObject[i]);
                 }
             }
             console.log(this.sliderVisible);
-        },
-        moveToEnd: function(arr, index) {
-            if (index >= 0 && index < arr.length) {
-                const [element] = arr.splice(index, 1);
-                arr.push(element);
+    },
+    moveToEnd: function(arr, index) {
+        if (index >= 0 && index < arr.length) {
+            const [element] = arr.splice(index, 1);
+            arr.push(element);
+        }
+    },
+    moveToStart: function(arr, index) {
+        if (index >= 0 && index < arr.length) {
+            const [element] = arr.splice(index, 1);
+            arr.unshift(element);
+        }
+    },
+    scrollRight: function() {
+        const container = this.$refs.toScrollEl;
+        let scrollWidth = 324;
+
+        container.scrollBy({ left: scrollWidth, behavior: 'smooth' });
+
+        setTimeout(() => {
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - scrollWidth) {
+                this.moveToEnd(this.sliderVisible, 0);
+                this.$nextTick(() => {
+                    container.scrollBy({ left: -scrollWidth, behavior: 'auto' });
+                });
             }
-        },
-        scrollRight: function() {
-            const container = this.$refs.toScrollEl;
-            let scrollWidth = 324;
+        }, 1000);
+    },
+    scrollLeft: function() {
+        const container = this.$refs.toScrollEl;
+        let scrollWidth = 324;
 
-            container.scrollBy({ left: scrollWidth, behavior: 'smooth' });
+        container.scrollBy({ left: -scrollWidth, behavior: 'smooth' });
 
-            setTimeout(() => {
-                if (container.scrollLeft + container.clientWidth >= container.scrollWidth - scrollWidth) {
-                    this.moveToEnd(this.sliderVisible, 0);
-                    this.$nextTick(() => {
-                        container.scrollBy({ left: -scrollWidth, behavior: 'auto' });
-                    });
-                }
-            }, 1000);
+        setTimeout(() => {
+            if (container.scrollLeft <= 0) {
+                this.moveToStart(this.sliderVisible, this.sliderVisible.length - 1);
+                this.$nextTick(() => {
+                    container.scrollBy({ left: scrollWidth, behavior: 'auto' });
+                });
+            }
+        }, 1000);
         },
         handleWheel(event) {
             event.preventDefault();
         }
 },
-created(){
+    created() {
         this.startSlider();
     },
     beforeDestroy() {
@@ -52,8 +73,8 @@ created(){
         const container = this.$refs.toScrollEl;
         container.removeEventListener('wheel', this.handleWheel);
     }
-
 }
+
 </script>
 
 <template>
@@ -66,7 +87,7 @@ created(){
     </section>
     
     <div class="thumbs" >
-                    <button class="prev" @click="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="prev" @click="scrollLeft"><i class="fa-solid fa-chevron-left"></i></button>
                     
                     <button class="next" @click="scrollRight" ><i class="fa-solid fa-chevron-right"></i></button>
     </div>
