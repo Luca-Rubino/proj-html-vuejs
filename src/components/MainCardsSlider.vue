@@ -5,21 +5,23 @@ export default{
     data() {
         return{
             store,
-            startCounter :0,
-            finelCounter: 3,
             sliderVisible: [],
+            scrollInterval: null,
         }
     },
 
     methods:{
         startSlider(){
-            for(let i = 0; i < 4; i++){
-                this.sliderVisible.push(store.slidesObject[i]);
+            for(let k=0; k<=1;k++ ){
+                for(let i = 0; i <= 4; i++){
+                    this.sliderVisible.push(store.slidesObject[i]);
+                }
             }
+
             console.log(this.sliderVisible);
 
         },
-        /* prevSlide(){
+        prevSlide(){
             if(this.isInvisible = 0){
                 this.isInvisible = 4;
                 
@@ -29,14 +31,10 @@ export default{
         },
 
         nextSlide(){
-            if(this.isInvisible >= 4){
-                this.isInvisible = 0
-            }else{  
-                this.isInvisible++;
-            }
+            this.changeId++;
             
             
-    } */
+    } 
 },
 created(){
         this.startSlider();
@@ -47,7 +45,7 @@ created(){
 
 <template>
     <section>
-        <article>
+        
             <div class="title-slides">
                 <h2>Our Professional Cycling Trainings</h2>
                 <p>Learn from the mountain biking expert.</p>
@@ -58,22 +56,20 @@ created(){
                     <div class="item" v-for="slide, index in sliderVisible" :key="index">
                         <div class="text">
                             <h3>{{ slide.name}}</h3>
-                            
                         </div>
                         <img :src="slide.image" :alt="slide.name"/>
                     </div>
-    
                     
-                </div>
-    
-                <div class="thumbs" >
-                        <button class="prev" ><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="next" ><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
-        </article>
+        
     </section>
+    <div class="thumbs" >
+                    <button class="prev" @click="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+                    
+                    <button class="next" @click="nextSlide" ><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
 
 <!--  <section>
         <ul>
@@ -91,12 +87,13 @@ created(){
 
 @use '../styles/general.scss';
 section{
-    width: 100%;
+        overflow-x: scroll;
+        overflow-y: clip;
+        width: 80vw;
+        margin: 0 auto;
+        margin-bottom: 3rem;
 }
-article{
-    width: 80%;
-    margin: 0 auto;
-}
+
 /* .animation-my{
     animation: slider .5s linear;
 }
@@ -152,12 +149,12 @@ p{
 
 .slider-wrapper{
     display: flex;
-    
-    justify-content: space-around;
-
+    justify-content: center;
+    position: relative;
     .item{
         border: solid 0.5rem black;
         position: relative;
+        margin: 0 2.2rem;
     }
 
     .text{

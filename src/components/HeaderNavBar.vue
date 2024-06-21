@@ -7,7 +7,7 @@ export default {
     data() {
         return {
             store,
-            showDropdown: false
+            isShow: false,
         };
     },
     computed: {
@@ -27,6 +27,9 @@ export default {
     methods: {
         toggleDropdown(){
             this.showDropDown = !this.showDropdown;
+        },
+        showSideBar(){
+            this.isShow = !this.isShow;
         }
     }
 };
@@ -53,7 +56,7 @@ export default {
         </nav>
         <div class="buttons">
             <div class="hamburger-menu">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" @click="showSideBar"></i>
             </div>
             <div class="button">
                 <button class="ucEvents">
@@ -64,11 +67,45 @@ export default {
         </div>
         
     </section>
+    <section class="sideBar" :class="(isShow)? '' : 'sideHide'">
+        <article class="prova">
+            <p>
+                gigi
+            </p>
+
+        </article>
+    </section>
 </header>
 
 </template>
 
 <style lang="scss" scoped>
+.sideBar{
+    height: 190vh;
+    width: 500px;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    animation: prova .50s linear;
+}
+@keyframes prova{
+    0%{
+        right: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+.sideHide{
+    display: none;
+}
+.prova{
+    display: flex;
+    justify-content: end;
+        p{
+            color: white;
+        }
+}
 
 header{
     background-color: white;
@@ -82,6 +119,7 @@ header{
     justify-content: center;
 }
     .navBar {
+        position: relative;
     color: black;
     padding: 1rem 0;
     height: 95px;
