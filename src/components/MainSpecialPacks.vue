@@ -9,9 +9,10 @@ export default {
                 
         
                         {
-                            image:'src/assets/img/handshake.png',
+                            image:'./src/assets/img/handshake.png',
                             title:'Basic',
                             text:'Learn to ride a bike from the professionals.',
+                            cost:'$1800',
                             list: [{
                                 id:0,
                                 listype:'x',
@@ -42,9 +43,10 @@ export default {
                     
                         },
                         {
-                            image:'src/assets/img/helmet.png',
+                            image:'./src/assets/img/helmetworker.png',
                             title:'Standard',
                             text:'Learn to ride a bike from the professionals.',
+                            cost:'$2500',
                             list:[{
                                 id:0,
                                 listype:'x',
@@ -76,9 +78,10 @@ export default {
                         },
                         {
 
-                            image:'src/assets/img/f1-helmet.png',
+                            image:'./src/assets/img/f1-helmet.png',
                             title:'Premium',
                             text:'Learn to ride a bike from the professionals.',
+                            cost:'$5000',
                             list:[{
                                 id:0,
                                 listype:'x',
@@ -135,7 +138,7 @@ export default {
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <img :src="pack.image" alt="">
-                <h2 class="title">{{ pack.title }}</h2>
+                <h2 class="title-front">{{ pack.title }}</h2>
                 <p>{{ pack.text }}</p>
                 <ul>
                     <li v-for="item in cardsPacks.list" :key="id">
@@ -145,8 +148,11 @@ export default {
                 </ul>
             </div>
             <div class="flip-card-back">
-                <p class="title">BACK</p>
-                <p>Leave Me</p>
+                <h2 class="title-back">{{ pack.title }}</h2>
+                <h1 class="cost">{{ pack.cost }}</h1>
+                <button>
+                    <h3>Send Request!</h3>
+                </button>
             </div>
         </div>
     </div>
@@ -170,6 +176,7 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin: 0 auto;
         margin-bottom: 3rem;
     }
     .logo-packs{
@@ -197,18 +204,33 @@ export default {
         display: flex;
         justify-content: space-evenly;      
         background-color: transparent;
-        width: 190px;
-        height: 254px;
+        width: 350px;
+        height: 400px;
         perspective: 1000px;
         font-family: sans-serif;
-        margin-right: 2rem;
+        margin-right: 4rem;
 }
 
-.title {
+.title-front {
+    font-size: 1.2em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.title-back {
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
     margin: 0;
+}
+
+.cost{
+    font-size: 2em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 3rem;
 }
 
 .flip-card-inner {
@@ -228,32 +250,47 @@ export default {
 .flip-card-front, .flip-card-back {
   box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid coral;
-  border-radius: 1rem;
+  border: 1px solid transparent;
 
 
   img{
-    width: 100px;
+    width: 70px;
+    filter: invert(100%);
+    padding-bottom: 2rem;
     margin: 0 auto;
   }
 }
 
 .flip-card-front {
-  color: coral;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(170deg, black 50%, white 50%);
+    border: transparent;
+    color: white;
+    
 }
 
 .flip-card-back {
-  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-     bisque 40%, rgb(255, 185, 160) 78%);
-  color: white;
-  transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+
+    button{
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        background-color: black;
+        color: white;
+        border:solid  white;
+        border-radius: 2px;
+    }
 }
 
 
