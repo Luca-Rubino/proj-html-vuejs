@@ -1,97 +1,80 @@
 <script>
 
-import {store} from '../store.js';
+import { store } from '../store.js';
 
-export default{
+export default {
     data() {
-        return{
+        return {
             store,
         }
     },
     methods: {
-        
+
     },
     mounted() {
     }
 }
-
-// codice per messaggio errore per il form nel footer
-var name = document.querySelector("input");
-console.log(name)
-    // function setErrorMessage() {
-    //     if ( name.validity.valueMissing ) {
-    //         name.setCustomValidity( "Funziona" );
-    //     }
-    // };
-    // setErrorMessage();
-    // name.addEventListener( "change", setErrorMessage );
 </script>
 
 <template>
 
-<footer>
+    <footer>
 
-    <section>
+        <section>
 
-        <article v-for="(item, index) in store.listaElementiFooter" :key="index" v-show="store.listaElementiFooter">
+            <article v-for="(item, index) in store.listaElementiFooter" :key="index" v-show="store.listaElementiFooter">
 
-            <ul>
-                <li>
-                    {{ store.listaElementiFooter[index].titolo }}
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-location-dot"></i> -->
-                    {{ store.listaElementiFooter[index].indirizzo }}
-                    {{ store.listaElementiFooter[index].li_1 }}
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                    {{ store.listaElementiFooter[index].telefono }}
-                    {{ store.listaElementiFooter[index].li_2 }}
-                    <form action="" method="post">
-                        <input type="email" class="input-field" name="email" id="email" placeholder="Your Email Address" required>
-                        <span class="wpcf7-not-valid-tip" aria-hidden="true">The field is required.</span>
-                        <input type="submit" value="Subscribe ->"></input>
-                        <span class="wpcf7-spinner"></span>
-                        <div class="wpcf7-response-output" aria-hidden="true">One or more fields have an error. Please check and try again.</div>
-                    </form>
-                </li>
-                <li>
-                    <!-- <i class="fa-solid fa-envelope"></i> -->
-                    {{ store.listaElementiFooter[index].email }}
-                    {{ store.listaElementiFooter[index].li_3 }}
-                </li>
-                <li>
-                    {{ store.listaElementiFooter[index].li_4 }}
-                    <!-- <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i> -->
-                </li>
-                <li>
-                    {{ store.listaElementiFooter[index].li_5 }}
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        {{ store.listaElementiFooter[index].titolo }}
+                    </li>
+                    <li>
+                        {{ store.listaElementiFooter[index].indirizzo }}
+                        {{ store.listaElementiFooter[index].li_1 }}
+                    </li>
+                    <li>
+                        {{ store.listaElementiFooter[index].telefono }}
+                        {{ store.listaElementiFooter[index].li_2 }}
+                        <form action="" method="post">
+                            <input type="email" class="input-field" name="email" id="email"
+                                placeholder="Your Email Address" onchange="'ci sono'" required>
+                            <input type="submit" value="Subscribe ->"></input>
+                        </form>
+                    </li>
+                    <li>
+                        {{ store.listaElementiFooter[index].email }}
+                        {{ store.listaElementiFooter[index].li_3 }}
+                    </li>
+                    <li>
+                        {{ store.listaElementiFooter[index].li_4 }}
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                    </li>
+                    <li>
+                        {{ store.listaElementiFooter[index].li_5 }}
+                    </li>
+                </ul>
 
-        </article>
+            </article>
 
-    </section>
+        </section>
 
-    <section>
+        <section>
 
-        <p>@ 2024 Gobike - All Rights Reserved</p>
+            <p>@ 2024 Gobike - All Rights Reserved</p>
 
-    </section>
+        </section>
 
-</footer>
+    </footer>
 
 </template>
 
 <style lang="scss" scoped>
-
 footer {
     background-color: black;
     color: white;
-    padding: 2rem 10%;
+    padding: 2rem 12%;
     margin-bottom: -26px;
 
     section {
@@ -111,9 +94,8 @@ footer {
                     display: none;
                 }
 
-                i{
-                    font-size: 1.7rem;
-                    margin-right: 1rem;
+                i {
+                    display: none;
                 }
             }
 
@@ -134,8 +116,22 @@ footer {
         article:first-of-type {
             ul {
 
+                i {
+                    display: block;
+                    font-size: 1.7rem;
+                    margin-right: 1rem;
+                    border: 1px solid gray;
+                    padding: .3rem 1.3rem;
+                }
+
                 li {
                     font-size: 1.1rem;
+                }
+
+                li::before {
+                    font-size: 2rem;
+                    font-family: FontAwesome;
+                    margin-right: 1rem;
                 }
 
                 li:first-of-type {
@@ -151,23 +147,21 @@ footer {
                     margin-bottom: 1rem;
                 }
 
-                li:nth-of-type(2)::before{
-                    content: '\f14c';
-                    margin-right: 1rem;
+                li:nth-of-type(2)::before {
+                    content: '\f3c5';
                 }
 
                 li:nth-of-type(3) {
                     margin-bottom: 1rem;
                 }
 
-                li:nth-of-type(3)::before{
+                li:nth-of-type(3)::before {
                     content: '\f2a0';
-                    margin-right: 1rem;
                 }
 
-                li:nth-of-type(4)::before{
+                li:nth-of-type(4)::before {
                     content: '\f0e0';
-                    margin-right: 1rem;
+                    font-size: 2rem;
                 }
             }
         }
@@ -180,32 +174,12 @@ footer {
                 }
 
                 li:nth-of-type(3) {
-                    input,
-                    span,
-                    div {
-                        display: block;
-                    }
-
                     input {
+                        display: block;
                         width: 25rem;
                         padding: 1rem;
                         border-radius: 3px;
                         border: 0;
-                    }
-
-                    span {
-                        // visibility: hidden;
-                        text-align: center;
-                        color: #c62d2d;
-                        font-size: 1em;
-                        font-weight: normal;
-                        display: block;
-                    }
-
-                    div {
-                        // visibility: hidden;
-                        padding:.5rem .3rem .5rem .3rem;
-                        border: 2px solid #ffb900;
                     }
 
                     input[type="email"] {
@@ -250,7 +224,7 @@ footer {
             ul {
                 li:first-of-type {
                     font-weight: 900;
-                    width: 8rem;
+                    width: 10rem;
                 }
 
                 li:nth-of-type(1)::before {
@@ -284,37 +258,5 @@ footer {
         text-align: center;
 
     }
-}
-
-.wpcf7-spinner {
-    visibility: hidden;
-    display: inline-block;
-    background-color: #23282d;
-    opacity: 0.75;
-    width: 24px;
-    height: 24px;
-    border: none;
-    border-radius: 100%;
-    padding: 0;
-    margin: 0 24px;
-    position: relative;
-}
-
-
-.wpcf7-spinner::before {
-    content: '';
-    position: absolute;
-    background-color: #fbfbfc;
-    top: 4px;
-    left: 4px;
-    width: 6px;
-    height: 6px;
-    border: none;
-    border-radius: 100%;
-    transform-origin: 8px 8px;
-    animation-name: spin;
-    animation-duration: 1000ms;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 </style>
