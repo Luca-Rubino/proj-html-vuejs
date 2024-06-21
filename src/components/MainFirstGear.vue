@@ -22,8 +22,6 @@ export default{
         <article class="bikertext">
             <h2>Do you want to be a professional cyclist?</h2>
             <p>
-                Webone About
-                Do you want to be a professional cyclist?
                 We offer 6 courses of varying difficulty and beautiful scenery that cyclists of all levels can enjoy. You will learn cycling from professionals with our competent and experienced staff. You will have a lot of fun with our amazing space.
             </p>
             <img src="../assets/img/divider.jpg" alt="">
