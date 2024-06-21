@@ -111,6 +111,7 @@ export const store = reactive({
     },
     header: {
         logo: './src/assets/img/logo-gobike.png',
+        favicon: './src/assets/img/favicon-gobike.png',
         buttonLogo: './src/assets/img/helmet.png',
         links: [
             { text: 'Home', url: '#' },
