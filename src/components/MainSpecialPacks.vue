@@ -141,7 +141,7 @@ export default {
                 <h2 class="title-front">{{ pack.title }}</h2>
                 <p>{{ pack.text }}</p>
                 <ul>
-                    <li v-for="item in cardsPacks.list" :key="id">
+                    <li v-for="item in pack.list" >
                         <p>{{ item.listype }} {{ item.text }}</p>
                         
                     </li>

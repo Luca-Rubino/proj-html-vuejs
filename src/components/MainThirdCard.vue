@@ -146,8 +146,10 @@ created(){
                 height: 200px;
                 border: 1px solid #f5f5f5;
                 display: flex;
-                
                 align-items: center;
+                    &:hover{
+                        padding-left: 1rem;
+                    }
                 img{
                     width: 50%;
                     height: 100%;
@@ -194,4 +196,5 @@ created(){
         width: fit-content;
         padding: .3rem ;
     }
+    
 </style>

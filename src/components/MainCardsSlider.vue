@@ -106,8 +106,11 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
         button{
             padding: 1.5rem;
+            background-color: white;
+            margin: 1rem;
         }
 }
 
