@@ -101,7 +101,7 @@ section{
 .myText{
     position: absolute;
     top: 40%;
-    left: 15%;
+    left: 10%;
     color: white;
     width: 32%;
         h1{
