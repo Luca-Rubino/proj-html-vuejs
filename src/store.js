@@ -132,18 +132,6 @@ export const store = reactive({
     ],
     articles: [
         {
-            image: '../src/assets/img/news-bike3.jpg',
-            title: 'How much should you cycle in a day?',
-            date: '22-06-2022 - bike',
-            description: 'In order to get the right benefit from the exercise [...]',
-        },
-        {
-            image: '../src/assets/img/news-bike4.jpg',
-            title: 'Road bike or mountain bike?',
-            date: '22-06-2022 - bike',
-            description: 'It takes 5 Km and 10 minutes, sir. But at [...]',
-        },
-        {
             image: '../src/assets/img/news-bike5.jpg',
             title: 'Road bike or mountain bike?',
             date: '22-06-2022 - bike',
@@ -151,9 +139,21 @@ export const store = reactive({
         },
         {
             image: '../src/assets/img/news-bike6-373x223.jpg',
-            title: 'Wath is mountain biking called?',
+            title: 'What is mountain biking called?',
             date: '22-06-2022 - bike',
-            description: 'Mountain biking is one of the most popular outdoor sports, [...]',
+            description: 'Mountain biking is one of the most popular outdoors sports,  [...]',
+        },
+        {
+            image: '../src/assets/img/news-bike3.jpg',
+            title: 'How much should you cycle in a day?',
+            date: '22-06-2022 - bike',
+            description: 'In order to get the right benefit from the exercise [...]',
+        },
+        {
+            image: '../src/assets/img/news-bike4.jpg',
+            title: 'How long does it take 5 km by my bike?',
+            date: '22-06-2022 - bike',
+            description: 'It takes 5 km and 10 minutes, sir. But at [...]',
         }
     ], 
     slidesObject:[

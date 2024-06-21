@@ -1,3 +1,21 @@
+<template>
+    <div class="big-container">
+        <div class="bg">
+            <h1>Recent News & Articles</h1>
+            <p>Important information about bikes</p>
+        </div>
+        <div class="articles-container">
+            <article v-for="(article, index) in store.articles" :key="index" class="article-card card">
+                <img :src="article.image" :alt="article.title" />
+                <p class="data">{{ article.date }}</p>
+                <h3 id="font">{{ article.title }}</h3>
+                <p class="text-left" id="margin-b">{{ article.description }}</p>
+                <button id="cursor">More</button>
+            </article>
+        </div>
+    </div>
+</template>
+
 <script>
 import { store } from '../store.js';
 
@@ -17,8 +35,8 @@ export default {
             const mouseY = e.clientY - bounds.top;
             const centerX = bounds.width / 2;
             const centerY = bounds.height / 2;
-            const rotateX = (mouseY - centerY) / centerY * 15; // Aumentato a 15 per accentuare l'effetto
-            const rotateY = (mouseX - centerX) / centerX * 15; // Aumentato a 15 per accentuare l'effetto
+            const rotateX = (mouseY - centerY) / centerY * 14;
+            const rotateY = (mouseX - centerX) / centerX * 14;
 
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
@@ -38,31 +56,7 @@ export default {
         });
     },
 };
-
 </script>
-
-
-<template>
-    <div class="big-container">
-        <div class="bg">
-            <h1>Recent News & Articles</h1>
-            <p>Important information about bikes</p>
-        </div>
-        <div class="articles-container">
-            <article v-for="(article, index) in store.articles" :key="index" class="article-card card">
-                <img :src="article.image" :alt="article.title" />
-                <p class="data">{{ article.date }}</p>
-                <h3 id="font">{{ article.title }}</h3>
-                <p class="text-left" id="margin-b">{{ article.description }}</p>
-                <button id="cursor">More</button>
-            </article>
-        </div>
-    </div>
-</template>
-
-
-
-
 
 <style lang="scss" scoped>
 .big-container {
@@ -103,19 +97,18 @@ h1 {
     text-align: center;
     background: #fff;
     padding: 1.2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: calc(100% / 5);
     position: relative;
     transition: transform 0.3s ease-out;
     transform: rotate3d(0);
-    perspective: 1000px;
-    border: 10px solid #f6f6f6;
+    box-shadow: 0 0 10px #f2f2f2,
+        0 0 20px #f4f4f4,
+        0 0 30px #f6f6f6;
 }
 
 .article-card:hover {
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .article-card img {
