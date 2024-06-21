@@ -13,50 +13,32 @@ export default {
 
         function rotateToMouse(e) {
             const card = e.currentTarget;
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            const leftX = mouseX - bounds.x;
-            const topY = mouseY - bounds.y;
-            const center = {
-                x: leftX - bounds.width / 2,
-                y: topY - bounds.height / 2,
-            };
-            const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+            const mouseX = e.clientX - bounds.left;
+            const mouseY = e.clientY - bounds.top;
+            const centerX = bounds.width / 2;
+            const centerY = bounds.height / 2;
+            const rotateX = (mouseY - centerY) / centerY * 15; // Aumentato a 15 per accentuare l'effetto
+            const rotateY = (mouseX - centerX) / centerX * 15; // Aumentato a 15 per accentuare l'effetto
 
-            card.style.transform = `
-        rotate3d(
-            ${center.y / 100},
-            ${-center.x / 100},
-        0,
-          ${Math.log(distance) * 2}deg
-        )
-    `;
-
-            card.querySelector('.glow').style.backgroundImage = `
-        radial-gradient(
-            circle at
-          ${center.x * 2 + bounds.width / 2}px
-          ${center.y * 2 + bounds.height / 2}px,
-            #ffffff55,
-            #0000000f
-        )
-    `;
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
 
         cards.forEach((card) => {
             card.addEventListener('mouseenter', (e) => {
                 bounds = card.getBoundingClientRect();
+                card.style.transition = 'transform 0.1s ease';
                 card.addEventListener('mousemove', rotateToMouse);
             });
 
             card.addEventListener('mouseleave', (e) => {
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = 'rotateX(0) rotateY(0)';
                 card.removeEventListener('mousemove', rotateToMouse);
-                card.style.transform = '';
-                card.querySelector('.glow').style.backgroundImage = '';
             });
         });
     },
 };
+
 </script>
 
 
@@ -68,38 +50,21 @@ export default {
         </div>
         <div class="articles-container">
             <article v-for="(article, index) in store.articles" :key="index" class="article-card card">
-                <div class="glow"></div>
                 <img :src="article.image" :alt="article.title" />
                 <p class="data">{{ article.date }}</p>
                 <h3 id="font">{{ article.title }}</h3>
                 <p class="text-left" id="margin-b">{{ article.description }}</p>
-                <button>More</button>
+                <button id="cursor">More</button>
             </article>
         </div>
     </div>
 </template>
 
 
+
+
+
 <style lang="scss" scoped>
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body {
-    font-family: system-ui, sans-serif;
-    perspective: 1500px;
-    background: linear-gradient(white, #efefef);
-}
-
 .big-container {
     margin-bottom: 5rem;
     background-color: #fbfbfb;
@@ -142,24 +107,15 @@ h1 {
     border-radius: 8px;
     width: calc(100% / 5);
     position: relative;
-    transition-duration: 300ms;
-    transition-property: transform, box-shadow;
-    transition-timing-function: ease-out;
+    transition: transform 0.3s ease-out;
     transform: rotate3d(0);
+    perspective: 1000px;
+    border: 10px solid #f6f6f6;
 }
 
 .article-card:hover {
-    transition-duration: 150ms;
-    box-shadow: 0 5px 20px 5px #00000044;
-}
-
-.article-card .glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .article-card img {
