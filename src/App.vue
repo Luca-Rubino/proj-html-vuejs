@@ -3,12 +3,14 @@
 import AppMain from '../src/components/AppMain.vue';
 import AppHeader from '../src/components/AppHeader.vue';
 import AppFooter from '../src/components/AppFooter.vue';
+import KinetComponent from './components/KinetComponent.vue';
 
 export default{
     components:{
       AppMain,
       AppHeader,
-      AppFooter
+      AppFooter,
+      KinetComponent
     },
       data() {
           return{
@@ -19,7 +21,7 @@ export default{
 </script>
 
 <template>
-
+<KinetComponent/>
 <AppHeader/>
 <AppMain/>
 <AppFooter/>
