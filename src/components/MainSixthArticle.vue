@@ -1,39 +1,13 @@
 <script>
-import img1 from '../assets/img/news-bike3.jpg';
-import img2 from '../assets/img/news-bike4.jpg';
-import img3 from '../assets/img/news-bike5.jpg';
-import img4 from '../assets/img/news-bike6-373x223.jpg';
+import {store} from '../store.js';
+
 
 export default {
+
     data() {
         return {
-            articles: [
-                {
-                    image: img1,
-                    title: 'How much should you cycle in a day?',
-                    date: '22-06-2022 - bike',
-                    description: 'In order to get the right benefit from the exercise [...]',
-                },
-                {
-                    image: img2,
-                    title: 'Road bike or mountain bike?',
-                    date: '22-06-2022 - bike',
-                    description: 'It takes 5 Km and 10 minutes, sir. But at [...]',
-                },
-                {
-                    image: img3,
-                    title: 'Road bike or mountain bike?',
-                    date: '22-06-2022 - bike',
-                    description: 'Compared to similar road bikes with a solid frame structure, [...]',
-                },
-                {
-                    image: img4,
-                    title: 'Wath is mountain biking called?',
-                    date: '22-06-2022 - bike',
-                    description: 'Mountain biking is one of the most popular outdoor sports, [...]',
-                }
-            ],
-        };
+            store,
+        }
     },
 };
 </script>
@@ -46,7 +20,7 @@ export default {
             <p>Important information about bikes</p>
         </div>
         <div class="articles-container">
-            <article v-for="(article, index) in articles" :key="index" class="article-card">
+            <article v-for="(article, index) in store.articles" :key="index" class="article-card">
                 <img :src="article.image" :alt="article.title">
                 <p class="data">{{ article.date }}</p>
                 <h3 id="font">{{ article.title }}</h3>
@@ -55,6 +29,7 @@ export default {
             </article>
         </div>
     </div>
+    
 </template>
 
 

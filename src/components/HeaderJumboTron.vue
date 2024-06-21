@@ -78,13 +78,13 @@ section{
 .leftClick{
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 3%;
 }
 
 .rightClick{
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 3%;
 }
 
 .myButton{

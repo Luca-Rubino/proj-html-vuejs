@@ -12,7 +12,7 @@ export default {
                             image:'src/assets/img/handshake.png',
                             title:'Basic',
                             text:'Learn to ride a bike from the professionals.',
-                            list:[{
+                            list: [{
                                 id:0,
                                 listype:'x',
                                 text:'Phone Mountaineer bike training'
@@ -138,7 +138,7 @@ export default {
                 <h2 class="title">{{ pack.title }}</h2>
                 <p>{{ pack.text }}</p>
                 <ul>
-                    <li v-for="item in list" :key="id">
+                    <li v-for="item in cardsPacks.list" :key="id">
                         <p>{{ item.listype }} {{ item.text }}</p>
                         
                     </li>

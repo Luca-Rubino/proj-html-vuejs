@@ -128,6 +128,59 @@ export const store = reactive({
         { text: 'Trail Drive', url: '#'},
         { text: 'Pedaling', url: '#'},
         { text: 'All Trainings', url: '#'}
-    ] 
+    ],
+    articles: [
+        {
+            image: '../src/assets/img/news-bike3.jpg',
+            title: 'How much should you cycle in a day?',
+            date: '22-06-2022 - bike',
+            description: 'In order to get the right benefit from the exercise [...]',
+        },
+        {
+            image: '../src/assets/img/news-bike4.jpg',
+            title: 'Road bike or mountain bike?',
+            date: '22-06-2022 - bike',
+            description: 'It takes 5 Km and 10 minutes, sir. But at [...]',
+        },
+        {
+            image: '../src/assets/img/news-bike5.jpg',
+            title: 'Road bike or mountain bike?',
+            date: '22-06-2022 - bike',
+            description: 'Compared to similar road bikes with a solid frame structure, [...]',
+        },
+        {
+            image: '../src/assets/img/news-bike6-373x223.jpg',
+            title: 'Wath is mountain biking called?',
+            date: '22-06-2022 - bike',
+            description: 'Mountain biking is one of the most popular outdoor sports, [...]',
+        }
+    ], 
+    slidesObject:[
+        {
+        name:'Riding Lesson',
+        image:'./src/assets/img/training-box-1.jpg',
+        view: true,
+    },
+    {
+        name:'Safe Driving',
+        image:'./src/assets/img/training-box-2.jpg',
+        view: true,
+    },
+    {
+        name:'Mountain Bike',
+        image:'./src/assets/img/training-box-3.jpg',
+        view: true,
+    },
+    {
+        name:'Trail Drive',
+        image:'./src/assets/img/training-box-4.jpg',
+        view: true,
+    },
+    {
+        name:'Pedaling',
+        image:'./src/assets/img/training-box-5.jpg',
+        view: true,
+    },
+]
 
 });
