@@ -38,7 +38,7 @@ export default{
             </div>
             <div class="helmet">
                 <div>
-                    <img class="myIcon" src="../assets/img/helmet.png" alt="">
+                    <img class="myIcon" src="../assets/img/helmetworker.png" alt="">
                 </div>
                 <div>
                     <h3>Professional training</h3>
