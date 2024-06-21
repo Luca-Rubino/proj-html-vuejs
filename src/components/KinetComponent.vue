@@ -102,8 +102,8 @@ a:hover {
   border: solid rgba(197, 196, 196, 0.747) 2px;
   border-radius: 50%;
   position: absolute;
-  top: 650%;
-  left: 48%;
+  top: 645%;
+  left: 49.5%;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
   z-index: 10;
@@ -116,7 +116,7 @@ a:hover {
   border-radius: 50%;
   position: absolute;
   top: 30%;
-  left: 30%;
+  left: 15%;
   transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
 }
