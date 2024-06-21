@@ -68,7 +68,8 @@ export default {
 }
 
 .margin-bottom {
-    margin-bottom: 3rem;
+    margin-bottom: 2.6rem;
+    padding-top: 3rem;
     h2 {
         font-size: 2rem;
     }
@@ -81,6 +82,7 @@ export default {
     gap: 2rem;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-bottom: 3rem;
 }
 
 .trainer-card {
