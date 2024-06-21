@@ -27,22 +27,17 @@ export default{
         },
         scrollRight: function() {
             const container = this.$refs.toScrollEl;
-            let scrollWidth = 352;
+            let scrollWidth = 324;
 
             container.scrollBy({ left: scrollWidth, behavior: 'smooth' });
 
             setTimeout(() => {
                 if (container.scrollLeft + container.clientWidth >= container.scrollWidth - scrollWidth) {
-                    this.moveToEnd(this.feedbacks, 0);
+                    this.moveToEnd(this.sliderVisible, 0);
                     this.$nextTick(() => {
                         container.scrollBy({ left: -scrollWidth, behavior: 'auto' });
                     });
                 }
-            }, 1000);
-        },
-        startScrolling: function(){
-            this.scrollInterval = setInterval(() => {
-                this.scrollRight();
             }, 1000);
         },
         handleWheel(event) {
@@ -51,11 +46,6 @@ export default{
 },
 created(){
         this.startSlider();
-    },
-    mounted(){
-        this.startScrolling();
-        const container = this.$refs.toScrollEl;
-        container.addEventListener('wheel', this.handleWheel);
     },
     beforeDestroy() {
         clearInterval(this.scrollInterval);
@@ -74,41 +64,21 @@ created(){
             </div>
         </article>
     </section>
-    <!-- <section>
-        
-            <div class="title-slides">
-                <h2>Our Professional Cycling Trainings</h2>
-                <p>Learn from the mountain biking expert.</p>
-            </div>
-            <div class="container">
-                <div class="slider-wrapper">
-                    
-                    <div class="item" v-for="slide, index in sliderVisible" :key="index">
-                        <div class="text">
-                            <h3>{{ slide.name}}</h3>
-                        </div>
-                        <img :src="slide.image" :alt="slide.name"/>
-                    </div>
-                    
-                </div>
-            </div>
-
-        
-    </section> -->
+    
     <div class="thumbs" >
                     <button class="prev" @click="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
                     
-                    <button class="next" @click="nextSlide" ><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
+                    <button class="next" @click="scrollRight" ><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
 
-<!--  <section>
+<!-- <section>
         <ul>
-            <li v-for="card in slidesObject">
-                <img :src="card.image" alt="">
+            <li v-for="card in sliderVisible">
+                <img :src="card.text" alt="">
                 <p>{{ card.name }}</p>
             </li>
         </ul>
-    </section> -->
+    </section>  -->
     
     
 </template>
@@ -118,11 +88,33 @@ created(){
 @use '../styles/general.scss';
 section{
         width: 80vw;
-        margin: 0 auto;
-        margin-bottom: 3rem;
         display: flex;
         flex-direction: row;
+        max-width: 1300px;
+        overflow: scroll;
+        position: relative;
+        margin: 0 auto;
+}
+.item{
+    margin: 1rem;
+    width: 100%;
+    img{
+        border: 3px solid black;
+    }
+}
+.thumbs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        button{
+            padding: 1.5rem;
+        }
 }
 
+@media (max-width: 1600px) {
+    section{
+        max-width: 970px;
+    }
+}
 
 </style>

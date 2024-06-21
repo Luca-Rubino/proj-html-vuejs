@@ -20,26 +20,15 @@ export default{
 
 <template>
 
-<AppHeader id="top"/>
+<AppHeader/>
 <AppMain/>
 <AppFooter/>
-<a id="button" href="">asd</a>
+
 </template>
 
 <style lang="scss">
 
 @use './styles/general.scss';
 
-#top{
-  position: relative;
-}
-#button{
-  position: sticky;
-  color: white;
-  bottom: 3%;
-  left: 95%;
-  padding: .5rem;
-  background-color: black;
-}
 
 </style>
