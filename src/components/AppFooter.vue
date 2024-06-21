@@ -6,21 +6,25 @@ export default{
     data() {
         return{
             store,
-            listaElementiFooter: [
-                { id: 0, indirizzo: 'New Jersey, USA', telefono: '+1 (234) 567 89 10', email: 'example@exemple.com' },
-                { id: 1, titolo: 'Join Our Newsletter', li_1: 'Subscribe to receive ureful infotmation.' },
-                { id: 2, titolo: 'Training', li_1: 'Riding Lesson',  li_2: 'Safe Driving', li_3: 'Mountain Bike', li_4: 'Trail Drive', li_5: 'Pedaling' },
-                { id: 3, titolo: 'Quick Links', li_1: 'Home',  li_2: 'About Us', li_3: 'Blog', li_4: 'Packages', li_5: 'Contact' }
-            ],
-            index: 0,
-
         }
     },
     methods: {
-        setCustomValidity() {}
+        
+    },
+    mounted() {
     }
 }
 
+// codice per messaggio errore per il form nel footer
+var name = document.querySelector("input");
+console.log(name)
+    // function setErrorMessage() {
+    //     if ( name.validity.valueMissing ) {
+    //         name.setCustomValidity( "Funziona" );
+    //     }
+    // };
+    // setErrorMessage();
+    // name.addEventListener( "change", setErrorMessage );
 </script>
 
 <template>
@@ -29,23 +33,23 @@ export default{
 
     <section>
 
-        <article v-for="(listaElementiFooter, index) in listaElementiFooter" :key="index" v-show="listaElementiFooter">
+        <article v-for="(item, index) in store.listaElementiFooter" :key="index" v-show="store.listaElementiFooter">
 
             <ul>
                 <li>
-                    {{ listaElementiFooter.titolo }}
+                    {{ store.listaElementiFooter[index].titolo }}
                 </li>
                 <li>
                     <!-- <i class="fa-solid fa-location-dot"></i> -->
-                    {{ listaElementiFooter.indirizzo }}
-                    {{ listaElementiFooter.li_1 }}
+                    {{ store.listaElementiFooter[index].indirizzo }}
+                    {{ store.listaElementiFooter[index].li_1 }}
                 </li>
                 <li>
                     <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                    {{ listaElementiFooter.telefono }}
-                    {{ listaElementiFooter.li_2 }}
-                    <form action="get" method="post">
-                        <input type="email" name="email" placeholder="Your Email Address" required="true" oninvalid="this.setCustomValidity('The field is required')" onchange="this.setCustomValidity('')">
+                    {{ store.listaElementiFooter[index].telefono }}
+                    {{ store.listaElementiFooter[index].li_2 }}
+                    <form action="" method="post">
+                        <input type="email" class="input-field" name="email" id="email" placeholder="Your Email Address" required>
                         <span class="wpcf7-not-valid-tip" aria-hidden="true">The field is required.</span>
                         <input type="submit" value="Subscribe ->"></input>
                         <span class="wpcf7-spinner"></span>
@@ -54,17 +58,17 @@ export default{
                 </li>
                 <li>
                     <!-- <i class="fa-solid fa-envelope"></i> -->
-                    {{ listaElementiFooter.email }}
-                    {{ listaElementiFooter.li_3 }}
+                    {{ store.listaElementiFooter[index].email }}
+                    {{ store.listaElementiFooter[index].li_3 }}
                 </li>
                 <li>
-                    {{ listaElementiFooter.li_4 }}
+                    {{ store.listaElementiFooter[index].li_4 }}
                     <!-- <i class="fa-brands fa-facebook-f"></i>
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-twitter"></i> -->
                 </li>
                 <li>
-                    {{ listaElementiFooter.li_5 }}
+                    {{ store.listaElementiFooter[index].li_5 }}
                 </li>
             </ul>
 
@@ -189,6 +193,7 @@ footer {
                     }
 
                     span {
+                        // visibility: hidden;
                         text-align: center;
                         color: #c62d2d;
                         font-size: 1em;
@@ -197,11 +202,12 @@ footer {
                     }
 
                     div {
+                        // visibility: hidden;
                         padding:.5rem .3rem .5rem .3rem;
                         border: 2px solid #ffb900;
                     }
 
-                    input:first-of-type {
+                    input[type="email"] {
                         margin-bottom: .3rem;
                     }
 
@@ -216,7 +222,7 @@ footer {
             ul {
                 li:first-of-type {
                     font-weight: 900;
-                    width: 4rem;
+                    width: 5.5rem;
                 }
 
                 li:first-of-type::before {
@@ -243,6 +249,7 @@ footer {
             ul {
                 li:first-of-type {
                     font-weight: 900;
+                    width: 8rem;
                 }
 
                 li:nth-of-type(1)::before {
