@@ -92,6 +92,7 @@ footer {
     background-color: black;
     color: white;
     padding: 2rem 10%;
+    margin-bottom: -26px;
 
     section {
 
