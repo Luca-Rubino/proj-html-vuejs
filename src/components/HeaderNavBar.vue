@@ -69,14 +69,36 @@ export default {
         
     </section>
     <section class="sideBar" :class="(isShow)? '' : 'sideHide'">
-        <article class="prova">
-            <div>
-
-                <p>
-                    gigi
-                </p>
+        <article class="container">
+            <div class="sideLogo">
+                <img :src="store.header.onlyLogo" alt="logo">
+            </div> 
+            <div class="contacts">
+                <h1>
+                Contact Information
+                </h1>
+                <span class="icon">
+                    <i class="fa-solid fa-phone-volume"></i>
+                </span>
+                <p>+1 (234) 567 89 10</p>
+                <span class="icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </span>
+                <p>example@example.com</p>
+                <span class="icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <p>New Jersey, USA</p>
             </div>
-
+            <div class="socialIcons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>    
+            
+            <div class="credits">
+                <p>&#169 2022 - Gobike</p>
+            </div>
         </article>
     </section>
 </header>
@@ -84,38 +106,79 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
 .sideBar{
     height: 200vh;
     width: 400px;
     position: absolute;
-    background-color: black;
+    background-color: white;
+    box-shadow: 0 15px 15px;
     left: 0;
-    animation: prova 1s linear;
+    animation: slide .5s ease-in;
+    color: black;
 }
-
-
 
 
 .sideHide{
     display: none;
 }
 
-.prova{
+.container{
     position: relative;
     height: 100%;
     div{
         position: absolute;
         top: 50%;
-        right: 60%;
-        animation: prova2 .5s linear;
-        p{
-            color: white;
-            font-size: 5rem;
+        right: 30%;
+        animation: slide2 .8s ease-in;
+        img{
+            height: 150px;
+            width: 160px;        
         }
-
     }
 }
-@keyframes prova {
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 150px;
+    margin-left: 50px;
+    margin-right: -50px;
+    h1{
+        font-size: 1.8rem;
+        margin-top: 3rem;
+        font-weight: 700;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    i{
+        font-size: 3rem;
+        background-color: black;
+        border-radius: 5px;
+        color: white;
+        padding: 1rem;
+    }
+}
+
+.socialIcons{
+    display: flex;
+    margin-top: 710px;
+    margin-right: 25px;
+    i{
+        font-size: 2rem;
+        margin-right: .8rem
+    }
+}
+
+.credits{
+    margin-top: 800px;
+    margin-right: 35px;
+}
+
+@keyframes slide {
     0%{
         width: 0;
     }
@@ -124,12 +187,12 @@ export default {
     }
     
 }
-@keyframes prova2 {
+@keyframes slide2 {
     0%{
         right: 100%;
     }
     100%{
-        right: 60%;
+        right: 30%;
     }
 }
 
@@ -240,6 +303,7 @@ header{
             font-size: 1.2rem;
             border-radius: 5px;
             cursor: pointer;
+            border: transparent;
     }
 
         img.helmet{
