@@ -17,7 +17,7 @@ export default{
 
 // codice per messaggio errore per il form nel footer
 var name = document.querySelector("input");
-console.log(name)
+// console.log(name)
     // function setErrorMessage() {
     //     if ( name.validity.valueMissing ) {
     //         name.setCustomValidity( "Funziona" );
@@ -48,7 +48,7 @@ console.log(name)
                     <!-- <i class="fa-solid fa-phone-volume"></i> -->
                     {{ store.listaElementiFooter[index].telefono }}
                     {{ store.listaElementiFooter[index].li_2 }}
-                    <form action="" method="post">
+                    <form action="get" method="post">
                         <input type="email" class="input-field" name="email" id="email" placeholder="Your Email Address" required>
                         <span class="wpcf7-not-valid-tip" aria-hidden="true">The field is required.</span>
                         <input type="submit" value="Subscribe ->"></input>
@@ -250,7 +250,7 @@ footer {
             ul {
                 li:first-of-type {
                     font-weight: 900;
-                    width: 8rem;
+                    width: 10rem;
                 }
 
                 li:nth-of-type(1)::before {

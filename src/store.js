@@ -182,7 +182,7 @@ export const store = reactive({
         image:'./src/assets/img/training-box-5.jpg',
         view: true,
     },
-]
+],
 // footer element
 listaElementiFooter: [
     { indirizzo: 'New Jersey, USA', telefono: '+1 (234) 567 89 10', email: 'example@exemple.com' },
