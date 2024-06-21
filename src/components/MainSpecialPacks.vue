@@ -5,9 +5,13 @@ export default {
     data() {
         return {
             store,
+            form: {
+                name: '',
+                email: '',
+                number: ''
+            },
             cardsPacks:[
                 
-        
                         {
                             image:'./src/assets/img/handshake.png',
                             title:'Basic',
@@ -15,30 +19,29 @@ export default {
                             cost:'$1800',
                             list: [{
                                 id:0,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:1,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:2,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:3,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
-
                             ],
                     
                         },
@@ -49,27 +52,27 @@ export default {
                             cost:'$2500',
                             list:[{
                                 id:0,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:1,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:2,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:3,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
 
@@ -82,29 +85,30 @@ export default {
                             title:'Premium',
                             text:'Learn to ride a bike from the professionals.',
                             cost:'$5000',
-                            list:[{
+                            list:[
+                            {
                                 id:0,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:1,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:2,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:3,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'x',
+                                listype:'./src/assets/img/check.png',
                                 text:'Phone Mountaineer bike training'
                             },
 
@@ -118,6 +122,12 @@ export default {
     methods:{
         popUp(){
             this.isActive = !this.isActive;
+        },
+
+        submitForm() {
+            this.form.name = '';
+            this.form.email = '';
+            this.form.number = '';
         }
     }
 };
@@ -128,9 +138,20 @@ export default {
 
 <div class="container" >
     <article :class="(isActive)? 'prova' : 'provadNone'" @click="popUp">
-            <div>
-                <p>asd</p>
-            </div>
+        <div class="form">
+            <form @submit.prevent="submitForm">
+                <div >
+                    <input type="text" id="name" v-model="form.name" required placeholder="Full Name" />
+                </div>
+                <div>
+                    <input type="email" id="email" v-model="form.email" required placeholder="Email Address"  />
+                </div>
+                <div>
+                    <input type="number" v-model="form.number" id="number" required placeholder="Phone Number">
+                </div>
+                <button type="submit">Sunmit Form -></button>
+            </form>
+        </div>
         </article>
     <section>
 
@@ -148,12 +169,16 @@ export default {
         <div class="flip-card" v-for="pack in cardsPacks">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="pack.image" alt="">
+                <img id="filter" :src="pack.image" alt="">
                 <h2 class="title-front">{{ pack.title }}</h2>
                 <p>{{ pack.text }}</p>
                 <ul>
-                    <li v-for="item in pack.list" >
-                        <p>{{ item.listype }} {{ item.text }}</p>
+                    <li v-for="(item, index) in pack.list" :key="index" :class="(index < 3)? 'check' : 'cross'">
+                        <div class="img">
+                            <img class="check cross"  :src="item.listype" alt="">
+                        </div>
+                        
+                        <p> {{ item.text }}</p>
                     </li>
                 </ul>
             </div>
@@ -184,6 +209,29 @@ export default {
     flex-direction: column;
     width: 80%;
     margin: 0 auto;
+
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+
+
+    input {
+        padding: 1rem 2rem;
+    }
+
+button {
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+  border: none;
+}
+    }
+
+
+
     .my-card{
         display: flex;
         flex-direction: row;
@@ -217,7 +265,7 @@ export default {
         justify-content: space-evenly;      
         background-color: transparent;
         width: 350px;
-        height: 400px;
+        height: 500px;
         perspective: 1000px;
         font-family: sans-serif;
         margin-right: 4rem;
@@ -271,19 +319,46 @@ export default {
 
   img{
     width: 70px;
-    filter: invert(100%);
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     margin: 0 auto;
   }
 }
 
+img#filter{
+    filter: invert(100%);
+}
+
 .flip-card-front {
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(170deg, black 50%, white 50%);
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(175deg, black 0px, black 25vh, white 25vh,   white 100%);
     border: transparent;
     color: white;
+    font-size: .8rem;
+
+    p{
+        margin-bottom: 2rem;
+    }
+
+    ul{
+        color: black;
+        li{
+            margin-bottom: .5rem;
+            display: flex;
+            border-bottom: solid 0.1rem rgb(170, 165, 165);
+            img{
+                margin: 0;
+                width: 10px;
+            }
+
+            p{
+                margin-left: 1rem;
+            }
+        }
+    }
     
 }
 
