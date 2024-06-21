@@ -3,7 +3,9 @@
     <div class="wrapper-inner">
       <h1>github.com/gmrchk/kinet</h1>
     </div>
-    <div id="circle" class="circle"></div>
+    <div id="circle" class="circle">
+      <div id="point" class="point"></div>
+    </div>
   </div>
 </template>
 
@@ -41,15 +43,6 @@ export default {
     // call kinet animate method on mousemove
     document.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('scroll', this.handleScroll);
-
-    // log events
-    this.kinet.on('start', function() {
-      console.log('start');
-    });
-
-    this.kinet.on('end', function() {
-      console.log('end');
-    });
   },
   beforeDestroy() {
     // Clean up event listeners and kinet instance
@@ -109,11 +102,22 @@ a:hover {
   border: solid rgba(197, 196, 196, 0.747) 2px;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 26rem -1.1rem ;
+  top: 650%;
+  left: 48%;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
   z-index: 10;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(82, 82, 82);
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
 }
 </style>
