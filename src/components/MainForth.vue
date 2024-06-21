@@ -7,7 +7,7 @@
         <div class="trainers-container">
             <div class="trainer-card" v-for="(trainer, index) in trainers" :key="index">
                 <div class="image-container">
-                    <img :src="trainer.image" :alt="trainer.name">
+                    <img class="transition" :src="trainer.image" :alt="trainer.name">
                     <div class="info">
                         <h3>{{ trainer.name }}</h3>
                         <p>{{ trainer.role }}</p>
@@ -70,6 +70,7 @@ export default {
 .margin-bottom {
     margin-bottom: 2.6rem;
     padding-top: 3rem;
+
     h2 {
         font-size: 2rem;
     }
@@ -96,7 +97,7 @@ export default {
 .image-container {
     position: relative;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     overflow: hidden;
 }
 
@@ -112,22 +113,27 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(0, 0, 0, );
     color: #fff;
     text-align: center;
     padding: 1rem;
-    transform: translateY(30%); 
-    transition: transform 1s ease;
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
     z-index: 1;
-    padding-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .trainer-card:hover .info {
-    transform: translateY(0); 
+    transform: translateY(35%);
+}
+
+.trainer-card img {
+    transition: transform 0.5s, filter 0.5s;
 }
 
 .trainer-card:hover img {
     transform: scale(1.1);
+    filter: brightness(35%);
 }
 
 .trainer-card h3 {
@@ -145,7 +151,7 @@ export default {
 
 .social-icons i {
     font-size: 0.8rem;
-    margin: 0 0.5rem;
+    margin: 0.5rem;
     cursor: pointer;
     color: white;
     margin-bottom: 1.5rem;
