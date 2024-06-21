@@ -111,9 +111,15 @@ export default {
                             ]
                         },
                 
-                        ]
+                        ],
+            isActive: false,
         };
     },
+    methods:{
+        popUp(){
+            this.isActive = !this.isActive;
+        }
+    }
 };
 </script>
 
@@ -121,6 +127,11 @@ export default {
 <template>
 
 <div class="container" >
+    <article :class="(isActive)? 'prova' : 'provadNone'" @click="popUp">
+            <div>
+                <p>asd</p>
+            </div>
+        </article>
     <section>
 
         <div class="logo-packs">
@@ -143,20 +154,20 @@ export default {
                 <ul>
                     <li v-for="item in pack.list" >
                         <p>{{ item.listype }} {{ item.text }}</p>
-                        
                     </li>
                 </ul>
             </div>
             <div class="flip-card-back">
                 <h2 class="title-back">{{ pack.title }}</h2>
                 <h1 class="cost">{{ pack.cost }}</h1>
-                <button>
+                <button @click="popUp">
                     <h3>Send Request!</h3>
                 </button>
             </div>
         </div>
     </div>
     </section>
+        
 
 </div>
 
@@ -167,6 +178,7 @@ export default {
 <style lang="scss" scoped>
 
 .container{
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -292,9 +304,30 @@ export default {
         border-radius: 2px;
     }
 }
-
-
 }
+.provadNone{
+    display: none;
+}
+
+.prova{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        div{
+            padding: 10%;
+            width: 100px;
+            background-color: white;
+        }
+}
+
 
 
 </style>
