@@ -91,14 +91,15 @@ header{
     justify-content: space-between;
 
     i {
-        font-size: 2rem;
         color: rgb(97, 97, 97);
         cursor: pointer;
+        font-size: 1.5rem;
     }
 
 
         .logo img {
             height: 80px;
+            margin-left: 2rem;
         }
 
         .navLinks ul {
@@ -123,20 +124,20 @@ header{
                 min-width: 100px;
             }
 
-                    a:after {
+                    li:after {
                         content: "";
                         position: absolute;
                         width: 0%;
-                        height: 10px;
+                        height: 3px;
                         display: block;
                         transition: all 0.3s ease;
-                        top: 30px;
+                        top: 1.3rem;
                         border-radius: 15px;
                     }
 
-                    a:hover:after {
-                        width: 65px;
-                        height: 5px;
+                    li:hover:after {
+                        width: 40px;
+                        height: 3px;
                         background-color: black;
                     }
 
@@ -151,8 +152,9 @@ header{
         a {
             color: black;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1rem;
+            
         }
 
     div.buttons{

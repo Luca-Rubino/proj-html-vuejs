@@ -67,12 +67,14 @@ export default{
 </template>
 
 <style lang="scss" scoped>
+
 section{
     height: 100vh;
     width: 100vw;
     position: relative;
     margin-bottom: 5rem;
 }
+
 .leftClick{
     position: absolute;
     top: 50%;
@@ -84,6 +86,7 @@ section{
     top: 50%;
     right: 3%;
 }
+
 .myButton{
         font-size: 1.5rem;
         background-color: black;
@@ -94,22 +97,26 @@ section{
         line-height: 60px;
         cursor: pointer;
 }
+
 .myText{
     position: absolute;
     top: 40%;
     left: 15%;
     color: white;
-    width: 40%;
+    width: 32%;
         h1{
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-weight: 800;
         }
         p{
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
+            font-weight: 800;
         }
         button{
-            font-size: 1.3rem;
+            font-size: 1rem;
+            font-weight: 800;
             padding: 1.5rem 2.5rem;
             background-color: black;
             color: white;
