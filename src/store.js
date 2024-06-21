@@ -1,6 +1,7 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
+    favicon: '/../src/assets/img/favicon-gobike.png',
     thirdCards: [
         {
             img: '../src/assets/img/event1.jpg',
