@@ -12,39 +12,69 @@ export default{
 
     methods:{
         startSlider(){
-            for(let k=0; k<=1;k++ ){
+            for(let k=0; k <=1;k++ ){
                 for(let i = 0; i <= 4; i++){
                     this.sliderVisible.push(store.slidesObject[i]);
                 }
             }
-
             console.log(this.sliderVisible);
-
         },
-        prevSlide(){
-            if(this.isInvisible = 0){
-                this.isInvisible = 4;
-                
-            }else{  
-                this.isInvisible--;
+        moveToEnd: function(arr, index) {
+            if (index >= 0 && index < arr.length) {
+                const [element] = arr.splice(index, 1);
+                arr.push(element);
             }
         },
+        scrollRight: function() {
+            const container = this.$refs.toScrollEl;
+            let scrollWidth = 352;
 
-        nextSlide(){
-            this.changeId++;
-            
-            
-    } 
+            container.scrollBy({ left: scrollWidth, behavior: 'smooth' });
+
+            setTimeout(() => {
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth - scrollWidth) {
+                    this.moveToEnd(this.feedbacks, 0);
+                    this.$nextTick(() => {
+                        container.scrollBy({ left: -scrollWidth, behavior: 'auto' });
+                    });
+                }
+            }, 1000);
+        },
+        startScrolling: function(){
+            this.scrollInterval = setInterval(() => {
+                this.scrollRight();
+            }, 1000);
+        },
+        handleWheel(event) {
+            event.preventDefault();
+        }
 },
 created(){
         this.startSlider();
     },
+    mounted(){
+        this.startScrolling();
+        const container = this.$refs.toScrollEl;
+        container.addEventListener('wheel', this.handleWheel);
+    },
+    beforeDestroy() {
+        clearInterval(this.scrollInterval);
+        const container = this.$refs.toScrollEl;
+        container.removeEventListener('wheel', this.handleWheel);
+    }
 
 }
 </script>
 
 <template>
-    <section>
+    <section class="container" ref="toScrollEl" >
+        <article v-for="(item, index) in sliderVisible" :key="index">
+            <div class="item">
+                <img :src="item.image" alt="">
+            </div>
+        </article>
+    </section>
+    <!-- <section>
         
             <div class="title-slides">
                 <h2>Our Professional Cycling Trainings</h2>
@@ -64,7 +94,7 @@ created(){
             </div>
 
         
-    </section>
+    </section> -->
     <div class="thumbs" >
                     <button class="prev" @click="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
                     
@@ -87,99 +117,12 @@ created(){
 
 @use '../styles/general.scss';
 section{
-        overflow-x: scroll;
-        overflow-y: clip;
         width: 80vw;
         margin: 0 auto;
         margin-bottom: 3rem;
+        display: flex;
+        flex-direction: row;
 }
 
-/* .animation-my{
-    animation: slider .5s linear;
-}
-.invisible{
-    display: none;
-}
-@keyframes slider {
-    0%{
-        left: 0;
-    }
-    100%{
-        left: 500px;
-    }
-} */
-/*
-ul{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: max-content;
-}
-li{
-    width: calc((100% / 4) - 2rem);
-    position: relative;
-    
-}
-img{
-    object-fit: contain;
-    object-position: center;
-    border: solid 0.5rem rgb(0, 0, 0);
-    margin-right: 1rem;
-
-}
-p{
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 2rem;
-    width: 100%;
-    height: 100%;
-} */
-
-
-.title-slides{
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-
-
-.slider-wrapper{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    .item{
-        border: solid 0.5rem black;
-        position: relative;
-        margin: 0 2.2rem;
-    }
-
-    .text{
-        position:relative;
-        top: 50px;
-        left: 10px;
-        align-content: space-between;
-        color:white;
-        z-index: 1;
-        
-    }
-    
-}
-
-.thumbs{
-text-align: center;
-padding: 2rem 0rem;
-
-button{
-    background-color: white;
-    margin-left: 1rem;
-    height: 80px;
-    width: 80px;
-}
-
-}
 
 </style>

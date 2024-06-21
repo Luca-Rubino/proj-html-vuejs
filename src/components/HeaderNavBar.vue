@@ -27,6 +27,7 @@ export default {
     methods: {
         toggleDropdown(){
             this.showDropDown = !this.showDropdown;
+            
         },
         showSideBar(){
             this.isShow = !this.isShow;
@@ -69,9 +70,12 @@ export default {
     </section>
     <section class="sideBar" :class="(isShow)? '' : 'sideHide'">
         <article class="prova">
-            <p>
-                gigi
-            </p>
+            <div>
+
+                <p>
+                    gigi
+                </p>
+            </div>
 
         </article>
     </section>
@@ -81,31 +85,54 @@ export default {
 
 <style lang="scss" scoped>
 .sideBar{
-    height: 190vh;
-    width: 500px;
+    height: 200vh;
+    width: 400px;
     position: absolute;
     background-color: black;
     left: 0;
-    animation: prova .50s linear;
+    animation: prova 1s linear;
 }
-@keyframes prova{
+
+
+
+
+.sideHide{
+    display: none;
+}
+
+.prova{
+    position: relative;
+    height: 100%;
+    div{
+        position: absolute;
+        top: 50%;
+        right: 60%;
+        animation: prova2 .5s linear;
+        p{
+            color: white;
+            font-size: 5rem;
+        }
+
+    }
+}
+@keyframes prova {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 400px;
+    }
+    
+}
+@keyframes prova2 {
     0%{
         right: 100%;
     }
     100%{
-        left: 0;
+        right: 60%;
     }
 }
-.sideHide{
-    display: none;
-}
-.prova{
-    display: flex;
-    justify-content: end;
-        p{
-            color: white;
-        }
-}
+
 
 header{
     background-color: white;
