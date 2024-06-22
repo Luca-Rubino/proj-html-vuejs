@@ -137,9 +137,17 @@ export default {
 <template>
 
 <div class="container" >
-    <article :class="(isActive)? 'prova' : 'provadNone'" @click="popUp">
+    <article :class="(isActive)? 'active-form' : 'off-form'" >
         <div class="form">
             <form @submit.prevent="submitForm">
+                <div class="title-pack-form">
+                    <h1>
+                    Basic Packs
+                    </h1>
+                    <p>Application Form</p>
+                </div>
+                <button class="close" @click="popUp">X</button>
+                
                 <div >
                     <input type="text" id="name" v-model="form.name" required placeholder="Full Name" />
                 </div>
@@ -149,7 +157,10 @@ export default {
                 <div>
                     <input type="number" v-model="form.number" id="number" required placeholder="Phone Number">
                 </div>
-                <button type="submit">Sunmit Form -></button>
+                <button type="submit">
+                    Submit Form 
+                    &#129122;
+                </button>
             </form>
         </div>
         </article>
@@ -159,7 +170,7 @@ export default {
             <img src="../assets/img/badge.png" alt="">
         </div>
         <div class="title-packs">
-            <h1>Special Packs</h1>
+            <h2>Special Packs</h2>
             <p>Select pricing plan to get more</p>
         </div>
     </section>
@@ -210,28 +221,6 @@ export default {
     width: 80%;
     margin: 0 auto;
 
-    .form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        height: 300px;
-
-
-    input {
-        padding: 1rem 2rem;
-    }
-
-button {
-  padding: 1rem 2rem;
-  background-color: black;
-  color: white;
-  border: none;
-}
-    }
-
-
-
     .my-card{
         display: flex;
         flex-direction: row;
@@ -256,7 +245,12 @@ button {
 
     .title-packs{
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2.5rem;
+
+        h2{
+            font-size: 2rem;
+            margin-bottom: .8rem;
+        }
     }
 
 
@@ -304,24 +298,24 @@ button {
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid transparent;
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid transparent;
 
 
-  img{
+    img{
     width: 70px;
     padding-bottom: 1rem;
     margin: 0 auto;
-  }
+    }
 }
 
 img#filter{
@@ -380,11 +374,11 @@ img#filter{
     }
 }
 }
-.provadNone{
+.off-form{
     display: none;
 }
 
-.prova{
+.active-form{
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -396,13 +390,60 @@ img#filter{
     display: flex;
     justify-content: center;
     align-items: center;
-        div{
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 10%;
-            width: 100px;
-            background-color: white;
+            height: 450px;
+            width: 450px;
+            background-color: rgb(254 254 254);
+            
+
+            .title-pack-form{
+                padding: 0 ;
+                text-align: center;
+                margin-bottom: 3rem;
+                h1{
+                    font-size: 2rem;
+                }
+            }
+
+            .close{
+                width: 5%;
+                position: fixed; 
+                z-index: 5;
+                top: 23%;
+                left: 60%;
+                font-size: 1.5rem;
+                background-color:transparent ;
+                color: black;
+                padding: .5rem 1rem;
+            }
+
+            
+            input {
+                color: rgb(169 169 169);
+                background-color: rgb(255 255 255);
+                box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+                border: solid transparent;
+                border-bottom: solid black;
+                border-radius: .3rem;
+                margin-bottom: .1rem;
+                width: 350px;
+                padding: 1.5rem 2rem;
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+                width: 100%;
+                padding: 1.5rem 2rem;
+                background-color: black;
+                color: white;
+                border: none;
+            }
         }
 }
-
-
 
 </style>
