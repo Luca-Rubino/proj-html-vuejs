@@ -38,7 +38,7 @@ export default {
                         <form action="" method="post">
                             <input type="email" class="input-field" name="email" id="email"
                                 placeholder="Your Email Address" onchange="'ci sono'" required>
-                            <input type="submit" value="Subscribe ->"></input>
+                            <input type="submit" value="Subscribe &#8594;"></input>
                         </form>
                     </li>
                     <li>
@@ -62,7 +62,7 @@ export default {
 
         <section>
 
-            <p>@ 2024 Gobike - All Rights Reserved</p>
+            <p>&copy; 2024 Gobike - All Rights Reserved.</p>
 
         </section>
 
@@ -118,12 +118,12 @@ footer {
                     display: block;
                     font-size: 1.7rem;
                     margin-right: 1rem;
-                    border: 1px solid gray;
+                    border: 1px solid #424242;
                     padding: .3rem 1.3rem;
                 }
 
                 li {
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     font-weight: 300;
                     align-items: baseline;
@@ -171,25 +171,41 @@ footer {
 
         article:nth-of-type(2) {
             ul {
+                margin-left: 8rem;
+
                 li:nth-of-type(2) {
-                    margin-bottom: 3rem;
+                    margin-bottom: 2.3rem;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 1.1rem;
                 }
 
                 li:nth-of-type(3) {
                     input {
                         display: block;
-                        width: 25rem;
-                        padding: 1rem;
+                        width: 28.4rem;
+                        padding: 1.3rem 1rem;
                         border-radius: 3px;
                         border: 0;
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     }
 
                     input[type="email"] {
                         margin-bottom: .3rem;
+                        font-size: 1rem;
+                        font-family: sans-serif;
                     }
 
                     input:nth-of-type(2) {
                         background-color: white;
+                        font-size: 1.2rem;
+                        font-weight: 300;
+                        color: #062860;
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    }
+
+                    input:nth-of-type(2)::after {
+                        content: '/f061';
+                        font-family: FontAwesome;
                     }
                 }
             }
@@ -197,10 +213,12 @@ footer {
 
         article:nth-of-type(3) {
             ul {
+                margin-left: 9.5rem;
+
                 li:first-of-type {
                     font-weight: 900;
                     font-size: 1.9rem;
-                    width: 5.5rem;
+                    width: 6.4rem;
                 }
 
                 li:first-of-type::before {
@@ -215,6 +233,7 @@ footer {
                 li {
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     font-weight: 300;
+                    font-size: 1.04rem;
                 }
 
                 li::before {
@@ -230,12 +249,13 @@ footer {
 
         article:nth-of-type(4) {
             ul {
-                margin-left: 5rem;
+                margin-left: 8rem;
 
                 li {
                     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
                     font-weight: 300;
-                    margin-bottom: .9rem;
+                    font-size: 1.04rem;
+                    margin-bottom: .849rem;
                 }
 
                 li:nth-of-type(1) {
@@ -243,7 +263,6 @@ footer {
                     font-weight: 900;
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     align-items: baseline;
-                    padding: 1.2rem 0;
                     margin-bottom: 0;
                 }
 
@@ -270,13 +289,13 @@ footer {
 
     section:first-of-type {
         display: flex;
-        justify-content: space-between;
         margin-bottom: 1rem;
     }
 
     section:nth-of-type(2) {
         text-align: center;
-
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.1rem;
     }
 }
 </style>
