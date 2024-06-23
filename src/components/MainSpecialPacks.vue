@@ -34,12 +34,12 @@ export default {
                             },
                             {
                                 id:3,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             ],
@@ -67,12 +67,12 @@ export default {
                             },
                             {
                                 id:3,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
 
@@ -103,12 +103,12 @@ export default {
                             },
                             {
                                 id:3,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
                             {
                                 id:4,
-                                listype:'./src/assets/img/check.png',
+                                listype:'./src/assets/img/cross.png',
                                 text:'Phone Mountaineer bike training'
                             },
 
@@ -326,13 +326,13 @@ img#filter{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(173deg, black 0px, black 34vh, white 34vh,   white 100%);
+    background: linear-gradient(173deg, black 0px, black 26vh, white 26vh,   white 100%);
     border: transparent;
     color: white;
     font-size: .8rem;
 
     .logo-card-front{
-            margin-bottom: 4.5rem;
+            margin-bottom: 4rem;
             h2{
                 margin-bottom: 2rem;
             }
@@ -351,6 +351,9 @@ img#filter{
             img{
                 margin: 0;
                 width: 10px;
+            }
+            .cross{
+                width: 18px;
             }
 
             p{
