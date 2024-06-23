@@ -47,17 +47,19 @@ export default {
                 <img :src="store.header.logo" alt="Logo">
             </div>
             <nav class="navLinks">
-            <ul>
-                <li v-for="link in store.header.links" >
-                    <a :href="link.url" > {{ link.text }}</a>
-                    <ul v-if="link.text === `trainings`" class="dropdown" v-show="showDropdown">
-                        <li v-for="subLink in headerDropDownTrainings">
-                            <a :href="subLink.url" >{{ subLink.text }}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+                <ul>
+                    <li v-for="link in store.header.links">
+                        <div :class="(link.text === 'Trainings') ? 'myPosition' : ''">
+                            <a :href="link.url">{{ link.text }}</a>
+                            <ul v-if="link.text == 'Trainings'" id="dropdown">
+                                <li v-for="subLink in headerDropDownTrainings">
+                                    <a :href="subLink.url">{{subLink.text}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         <div class="buttons">
             <div class="hamburger-menu">
                 <i class="fa-solid fa-bars" @click="showSideBar"></i>
@@ -109,6 +111,30 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+        #dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 33%;
+            background: white;
+            list-style: none;
+            padding: 1rem;
+            margin: 0;
+            min-width: 100px;
+                li{
+                    margin-bottom: .5rem;
+                    
+                }
+        }
+    .myPosotion{
+        position: relative;
+    }
+
+    .myPosition:hover #dropdown {
+        display: block;
+    }
+
+
 
 .sideBar{
     height: 200vh;
@@ -241,18 +267,6 @@ header{
 
             .nav-item{
                 position: relative;
-            }
-
-            .dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                list-style: none;
-                padding: 1rem;
-                margin: 0;
-                min-width: 100px;
             }
 
                     li:after {
