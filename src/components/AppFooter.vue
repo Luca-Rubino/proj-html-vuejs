@@ -74,10 +74,11 @@ export default {
 footer {
     background-color: black;
     color: white;
-    padding: 2rem 12%;
+    padding: 2rem 13.3% 2rem 11.5%;
     margin-bottom: -26px;
 
     section {
+        justify-content: space-between;
 
         article {
 
@@ -171,7 +172,6 @@ footer {
 
         article:nth-of-type(2) {
             ul {
-                margin-left: 8rem;
 
                 li:nth-of-type(2) {
                     margin-bottom: 2.3rem;
@@ -213,7 +213,6 @@ footer {
 
         article:nth-of-type(3) {
             ul {
-                margin-left: 9.5rem;
 
                 li:first-of-type {
                     font-weight: 900;
@@ -249,7 +248,6 @@ footer {
 
         article:nth-of-type(4) {
             ul {
-                margin-left: 8rem;
 
                 li {
                     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
