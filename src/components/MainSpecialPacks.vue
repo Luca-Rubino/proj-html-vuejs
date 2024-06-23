@@ -326,7 +326,7 @@ img#filter{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(173deg, black 0px, black 26vh, white 26vh,   white 100%);
+    background: linear-gradient(173deg, black 0%, black 47%, rgba(0, 0, 0, 0) 48%, white 49%, white 100%);
     border: transparent;
     color: white;
     font-size: .8rem;
@@ -458,6 +458,10 @@ img#filter{
                 border: none;
             }
         }
+}
+
+.check, .cross {
+    justify-content: center;
 }
 
 </style>
