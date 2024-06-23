@@ -180,9 +180,12 @@ export default {
         <div class="flip-card" v-for="pack in cardsPacks">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img id="filter" :src="pack.image" alt="">
-                <h2 class="title-front">{{ pack.title }}</h2>
-                <p>{{ pack.text }}</p>
+                <div class="logo-card-front">
+                    <img id="filter" :src="pack.image" alt="">
+                    <h2 class="title-front">{{ pack.title }}</h2>
+                    <p>{{ pack.text }}</p>
+                </div>
+                    
                 <ul>
                     <li v-for="(item, index) in pack.list" :key="index" :class="(index < 3)? 'check' : 'cross'">
                         <div class="img">
@@ -309,16 +312,12 @@ export default {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border: 1px solid transparent;
-
-
-    img{
-    width: 70px;
-    padding-bottom: 1rem;
-    margin: 0 auto;
-    }
 }
 
 img#filter{
+    width: 70px;
+    padding-bottom: 1rem;
+    margin: 0 auto;
     filter: invert(100%);
 }
 
@@ -326,23 +325,29 @@ img#filter{
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(175deg, black 0px, black 25vh, white 25vh,   white 100%);
+    background: linear-gradient(173deg, black 0px, black 34vh, white 34vh,   white 100%);
     border: transparent;
     color: white;
     font-size: .8rem;
 
-    p{
-        margin-bottom: 2rem;
-    }
+    .logo-card-front{
+            margin-bottom: 4.5rem;
+            h2{
+                margin-bottom: 2rem;
+            }
+            p{
+                font-size: .9rem;
+            }
+        }
 
     ul{
         color: black;
         li{
-            margin-bottom: .5rem;
+            padding: .8rem;
             display: flex;
-            border-bottom: solid 0.1rem rgb(170, 165, 165);
+            align-items: center;
+            border-bottom: solid 0.1rem rgb(238 238 238);
             img{
                 margin: 0;
                 width: 10px;
@@ -350,8 +355,14 @@ img#filter{
 
             p{
                 margin-left: 1rem;
+                font-size: .9rem;
             }
         }
+
+        li:last-child{
+            border-bottom: solid 0.1rem transparent;
+        }
+
     }
     
 }
