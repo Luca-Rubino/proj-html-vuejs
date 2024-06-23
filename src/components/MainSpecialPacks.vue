@@ -145,8 +145,8 @@ export default {
                     Basic Packs
                     </h1>
                     <p>Application Form</p>
+                    <button class="close" @click="popUp">X</button>
                 </div>
-                <button class="close" @click="popUp">X</button>
                 
                 <div >
                     <input type="text" id="name" v-model="form.name" required placeholder="Full Name" />
@@ -415,6 +415,7 @@ img#filter{
             
 
             .title-pack-form{
+                position: relative;
                 padding: 0 ;
                 text-align: center;
                 margin-bottom: 3rem;
@@ -425,10 +426,10 @@ img#filter{
 
             .close{
                 width: 5%;
-                position: fixed; 
+                position: absolute; 
                 z-index: 5;
-                top: 23%;
-                left: 60%;
+                bottom: 65%;
+                left: 100%;
                 font-size: 1.5rem;
                 background-color:transparent ;
                 color: black;

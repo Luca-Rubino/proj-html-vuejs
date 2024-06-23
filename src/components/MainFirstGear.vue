@@ -75,6 +75,7 @@ export default{
             }
             p{
                 margin-bottom: 1.5rem;
+                line-height: 1.5rem;
             }
             img{
                 margin-bottom: 1.5rem;
