@@ -25,22 +25,22 @@ export default {
                             {
                                 id:1,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Remote Excellent bike service'
                             },
                             {
                                 id:2,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Onsite Safe cycling training'
                             },
                             {
                                 id:3,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Saafety helmet on bike'
                             },
                             {
                                 id:4,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Free bikes for children'
                             },
                             ],
                     
@@ -58,22 +58,22 @@ export default {
                             {
                                 id:1,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Remote Excellent bike service'
                             },
                             {
                                 id:2,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Onsite Safe cycling training'
                             },
                             {
                                 id:3,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Saafety helmet on bike'
                             },
                             {
                                 id:4,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Free bikes for children'
                             },
 
                             ]
@@ -94,22 +94,22 @@ export default {
                             {
                                 id:1,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Remote Excellent bike service'
                             },
                             {
                                 id:2,
                                 listype:'./src/assets/img/check.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Onsite Safe cycling training'
                             },
                             {
                                 id:3,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Saafety helmet on bike'
                             },
                             {
                                 id:4,
                                 listype:'./src/assets/img/cross.png',
-                                text:'Phone Mountaineer bike training'
+                                text:'Free bikes for children'
                             },
 
                             ]
