@@ -81,7 +81,9 @@ export default{
     <section class="container" ref="toScrollEl" >
         <article v-for="(item, index) in sliderVisible" :key="index">
             <div class="item">
+                <p class="posizionItemText">{{ item.name }}</p>
                 <img :src="item.image" alt="">
+                <span class="tagText">View</span>
             </div>
         </article>
     </section>
@@ -92,16 +94,6 @@ export default{
                     <button class="next" @click="scrollRight" ><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
-<!-- <section>
-        <ul>
-            <li v-for="card in sliderVisible">
-                <img :src="card.text" alt="">
-                <p>{{ card.name }}</p>
-            </li>
-        </ul>
-    </section>  -->
-    
-    
 </template>
 
 <style lang="scss" scoped>
@@ -119,13 +111,40 @@ section{
         position: relative;
         margin: 0 auto;
 }
+.tagText{
+    display: none;
+    padding: .5rem 1.5rem;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+    
+}
+.posizionItemText{
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    z-index: 5;
+}
 .item{
     margin: 1rem;
     width: 100%;
+    position: relative;
     img{
         border: 3px solid black;
     }
+        &:hover > .tagText{
+                display: inline;
+        }
+        &:hover > img{
+            filter: grayscale(50%);
+        }
 }
+
 .thumbs{
     display: flex;
     justify-content: center;

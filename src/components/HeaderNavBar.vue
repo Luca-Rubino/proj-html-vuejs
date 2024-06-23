@@ -8,6 +8,7 @@ export default {
         return {
             store,
             isShow: false,
+            isShowDrop: false,
         };
     },
     computed: {
@@ -31,6 +32,9 @@ export default {
         },
         showSideBar(){
             this.isShow = !this.isShow;
+        },
+        showDropMenu(){
+            this.isShowDrop = !this.isShowDrop;
         }
     }
 };
@@ -44,16 +48,15 @@ export default {
             </div>
             <nav class="navLinks">
             <ul>
-                <li v-for="link in store.header.links">
-                    <a :href="link.url" @mouseover="link.text === 'trainings' && toggleDropdown()" @mouseleave="link.text === 'trainings' && toggleDropdown()"> {{ link.text }}</a>
+                <li v-for="link in store.header.links" >
+                    <a :href="link.url" > {{ link.text }}</a>
                     <ul v-if="link.text === `trainings`" class="dropdown" v-show="showDropdown">
                         <li v-for="subLink in headerDropDownTrainings">
-                            <a :href="subLink.url">{{ subLink.text }}</a>
+                            <a :href="subLink.url" >{{ subLink.text }}</a>
                         </li>
                     </ul>
                 </li>
             </ul>
-
         </nav>
         <div class="buttons">
             <div class="hamburger-menu">
