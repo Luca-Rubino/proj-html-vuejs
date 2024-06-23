@@ -187,7 +187,7 @@ export const store = reactive({
 // footer element
     listaElementiFooter: [
     { indirizzo: 'New Jersey, USA', telefono: '+1 (234) 567 89 10', email: 'example@exemple.com' },
-    { titolo: 'Join Our Newsletter', li_1: 'Subscribe to receive ureful infotmation.' },
+    { titolo: 'Join Our Newsletter', li_1: 'Subscribe to receive useful information.' },
     { titolo: 'Training', li_1: 'Riding Lesson',  li_2: 'Safe Driving', li_3: 'Mountain Bike', li_4: 'Trail Drive', li_5: 'Pedaling' },
     { titolo: 'Quick Links', li_1: 'Home',  li_2: 'About Us', li_3: 'Blog', li_4: 'Packages', li_5: 'Contact' },
     ],
