@@ -234,7 +234,7 @@ header{
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 6;
     display: flex;
     align-items: center;
     justify-content: center;
