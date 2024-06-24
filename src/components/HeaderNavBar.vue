@@ -119,13 +119,13 @@ export default {
             background: white;
             list-style: none;
             padding: 1rem;
-            margin-top:.3rem;
+            margin-bottom: .2rem;
             min-width: 100px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
 
                 li{
                     margin-bottom: .5rem;
-                    
                 }
         }
     .myPosotion{
