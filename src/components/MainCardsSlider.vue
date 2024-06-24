@@ -102,8 +102,7 @@ export default{
 <style lang="scss" scoped>
 
 @use '../styles/general.scss';
-section::-webkit-scrollbar{
-}
+
 section{
         width: 80vw;
         display: flex;
