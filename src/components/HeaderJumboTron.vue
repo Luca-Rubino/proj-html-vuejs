@@ -132,7 +132,7 @@ section{
         background-size: cover;
     }
     .bg1{
-        background-image: url('../assets/img/slider-bike-9.jpg');
+        background-image: url('../assets/img/slider-bike-9.png');
         height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
