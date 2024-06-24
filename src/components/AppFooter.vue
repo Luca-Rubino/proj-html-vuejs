@@ -75,7 +75,6 @@ footer {
     background-color: black;
     color: white;
     padding: 2rem 13.3% 2rem 11.5%;
-    margin-bottom: -26px;
 
     section {
         justify-content: space-between;
