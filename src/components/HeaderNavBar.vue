@@ -13,15 +13,15 @@ export default {
     },
     computed: {
         headerLogo() {
-            console.log(this.store.header.logo);
+            // console.log(this.store.header.logo);
             return this.store.headerLogo;
         },
         headerLinks() {
-            console.log(this.store.header.links);
+            // console.log(this.store.header.links);
             return this.store.headerLinks;
         },
         headerDropDownTrainings(){
-        console.log(this.store.headerDropDownTrainings);
+        // console.log(this.store.headerDropDownTrainings);
         return this.store.headerDropDownTrainings;
     }
     },
@@ -67,7 +67,7 @@ export default {
             <div class="button">
                 <button class="ucEvents">
                     <img class="helmet" :src="store.header.buttonLogo" alt="helmet">
-                    <p>Upcoming Events -></p>
+                    <p>Upcoming Events <i class="fa-solid fa-arrow-right"></i></p>
                 </button>
             </div>
         </div>
@@ -239,13 +239,13 @@ header{
 }
     .navBar {
         position: relative;
-    color: black;
-    padding: 1rem 0;
-    height: 95px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        color: black;
+        padding: 1rem 0;
+        height: 95px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
     i {
         color: rgb(97, 97, 97);
@@ -321,6 +321,10 @@ header{
             border-radius: 5px;
             cursor: pointer;
             border: transparent;
+
+            i{
+                color: white;
+            }
     }
 
         img.helmet{

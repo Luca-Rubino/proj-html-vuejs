@@ -5,6 +5,7 @@
             <p>Learn to ride bikes from the experts</p>
         </div>
         <div class="trainers-container">
+            <!-- v-for che itera sull'array trainers -->
             <div class="trainer-card" v-for="(trainer, index) in trainers" :key="index">
                 <div class="image-container">
                     <img class="transition" :src="trainer.image" :alt="trainer.name">
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+// importazione immagini direttamente nel componente
 import Biker1 from '../assets/img/biker1.jpg';
 import Biker2 from '../assets/img/biker2.png';
 import Biker3 from '../assets/img/biker3.jpg';
@@ -32,6 +34,8 @@ import Biker4 from '../assets/img/biker4.jpg';
 export default {
     data() {
         return {
+// array di oggetti che contiene i dati dei trainer. Ogni oggetto rappresenta un trainer e include tre proprietà:
+// image, name, role
             trainers: [
                 {
                     image: Biker1,
@@ -70,7 +74,7 @@ export default {
 .margin-bottom {
     margin-bottom: 2.6rem;
     padding-top: 3rem;
-
+    
     h2 {
         font-size: 2rem;
     }

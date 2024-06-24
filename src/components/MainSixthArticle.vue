@@ -5,6 +5,7 @@
             <p>Important information about bikes</p>
         </div>
         <div class="articles-container">
+            <!-- v-for che itera sull'array articles in store -->
             <article v-for="(article, index) in store.articles" :key="index" class="article-card card">
                 <img :src="article.image" :alt="article.title" />
                 <p class="data">{{ article.date }}</p>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+// importa i dati dall'array articles nello store
 import { store } from '../store.js';
 
 export default {
@@ -28,7 +30,7 @@ export default {
     mounted() {
         const cards = document.querySelectorAll('.card');
         let bounds;
-
+        // funzione di rotazione della cards sull'hover del puntatore
         function rotateToMouse(e) {
             const card = e.currentTarget;
             const mouseX = e.clientX - bounds.left;
@@ -40,14 +42,14 @@ export default {
 
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
-
+        // Evento 'mouseenter': Quando il mouse entra in una carta, vengono registrate le dimensioni e la posizione della carta e viene aggiunto un breve effetto di transizione. Viene anche aggiunto un listener per tracciare il movimento del mouse sulla carta.
         cards.forEach((card) => {
             card.addEventListener('mouseenter', (e) => {
                 bounds = card.getBoundingClientRect();
                 card.style.transition = 'transform 0.1s ease';
                 card.addEventListener('mousemove', rotateToMouse);
             });
-
+            // Evento 'mouseleave': Quando il mouse esce dalla carta, viene ripristinata la posizione originale della carta e viene rimossa l'animazione di rotazione.
             card.addEventListener('mouseleave', (e) => {
                 card.style.transition = 'transform 0.5s ease';
                 card.style.transform = 'rotateX(0) rotateY(0)';
@@ -102,9 +104,7 @@ h1 {
     position: relative;
     transition: transform 0.3s ease-out;
     transform: rotate3d(0);
-    box-shadow: 0 0 10px #f2f2f2,
-        0 0 20px #f4f4f4,
-        0 0 30px #f6f6f6;
+    box-shadow: 0 0 10px #f2f2f2, 0 0 20px #f4f4f4, 0 0 30px #f6f6f6;
 }
 
 .article-card:hover {
