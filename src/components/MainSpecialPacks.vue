@@ -149,13 +149,13 @@ export default {
                 </div>
                 
                 <div >
-                    <input type="text" id="name" v-model="form.name" required placeholder="Full Name" />
+                    <input type="text" id="name" v-model="form.name" placeholder="Full Name" />
                 </div>
                 <div>
-                    <input type="email" id="email" v-model="form.email" required placeholder="Email Address"  />
+                    <input type="email" id="email" v-model="form.email" placeholder="Email Address"  />
                 </div>
                 <div>
-                    <input type="number" v-model="form.number" id="number" required placeholder="Phone Number">
+                    <input type="number" v-model="form.number" id="number" placeholder="Phone Number">
                 </div>
                 <button type="submit">
                     Submit Form 
