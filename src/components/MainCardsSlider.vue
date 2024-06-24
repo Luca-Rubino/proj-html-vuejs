@@ -11,6 +11,7 @@ export default{
     },
 
     methods: {
+        /* inizializzo lo slider con il doppio delle immagini per una corretta visualizzazione iniziale */
     startSlider() {
             for(let k = 0; k <= 1; k++) {
                 for(let i = 0; i <= 4; i++) {
@@ -19,12 +20,14 @@ export default{
             }
             console.log(this.sliderVisible);
     },
+    /* inserisco l'elemento successivo per poterlo visualizzare con uno scrollright */
     moveToEnd: function(arr, index) {
         if (index >= 0 && index < arr.length) {
             const [element] = arr.splice(index, 1);
             arr.push(element);
         }
     },
+    /* inserisco l'elemento successivo (all'inizio dell'array) per poterlo visualizzare con uno scrollleft */
     moveToStart: function(arr, index) {
         if (index >= 0 && index < arr.length) {
             const [element] = arr.splice(index, 1);
