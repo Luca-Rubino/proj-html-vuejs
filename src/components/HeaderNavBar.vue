@@ -119,8 +119,10 @@ export default {
             background: white;
             list-style: none;
             padding: 1rem;
-            margin: 0;
+            margin-top:.3rem;
             min-width: 100px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
                 li{
                     margin-bottom: .5rem;
                     
