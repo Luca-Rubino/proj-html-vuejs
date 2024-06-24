@@ -13,15 +13,15 @@ export default {
     },
     computed: {
         headerLogo() {
-            console.log(this.store.header.logo);
+            // console.log(this.store.header.logo);
             return this.store.headerLogo;
         },
         headerLinks() {
-            console.log(this.store.header.links);
+            // console.log(this.store.header.links);
             return this.store.headerLinks;
         },
         headerDropDownTrainings(){
-        console.log(this.store.headerDropDownTrainings);
+        // console.log(this.store.headerDropDownTrainings);
         return this.store.headerDropDownTrainings;
     }
     },
