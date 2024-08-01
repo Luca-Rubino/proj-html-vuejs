@@ -11,7 +11,7 @@ export default{
     },
     methods:{
         eventList(){
-            axios.get('http://152.89.170.170:3000/events/bike').then(response => {
+            axios.get('http://127.0.0.1:8080/events/bike').then(response => {
                 this.store.thirdCardsApi = response.data;
                 console.log(response.data);
             })
